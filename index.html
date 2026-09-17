@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>معرض النماذج — ١٤ نموذج موقع جاهز</title>
+<meta name="description" content="معرض نماذج مواقع إلكترونية جاهزة للأفراد والشركات والمؤسسات والمنظمات — عربي/إنجليزي، وضع ليلي، متجاوبة.">
+<meta name="theme-color" content="#F4F5F7">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F5F7; --card:#FFFFFF; --text:#15181D; --muted:#606874; --line:#E0E3E8; --acc:#3A5BD9;
+  --ff-ar:'Cairo',system-ui,sans-serif; --ff-en:'Space Grotesk',system-ui,sans-serif;
+}
+[data-theme="dark"]{--bg:#0D1014;--card:#161A20;--text:#E9ECF1;--muted:#98A1AE;--line:#252B33;--acc:#7A93F5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ff-ar);background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:22px}
+
+header{border-block-end:1px solid var(--line);position:sticky;inset-block-start:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);z-index:20}
+.bar{display:flex;align-items:center;gap:14px;height:70px}
+.brand{font-weight:800;font-size:1.06rem;display:flex;align-items:center;gap:10px}
+.brand i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:grid;place-items:center;color:#fff;font-style:normal;font-family:var(--ff-en);font-size:.85rem}
+.tools{margin-inline-start:auto;display:flex;gap:8px}
+.ico{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;background:var(--card)}
+
+.intro{padding:60px 0 34px}
+.kick{font-family:var(--ff-en);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);font-weight:700}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-block:10px 16px}
+.intro p{color:var(--muted);max-width:62ch}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-block-start:22px}
+.feat{font-size:.82rem;font-weight:700;color:var(--muted);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-block-end:70px}
+.tpl{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.24s}
+.tpl:hover{transform:translateY(-5px);border-color:var(--acc);box-shadow:0 18px 40px -20px rgba(20,26,40,.32)}
+.swatch{height:168px;overflow:hidden;display:flex;align-items:flex-end;padding:16px;gap:7px;position:relative}
+.swatch>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.swatch b{position:absolute;z-index:2;inset-block-start:14px;inset-inline-start:16px;font-family:var(--ff-en);font-size:.76rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.72)}
+.dot{position:relative;z-index:2;width:26px;height:26px;border-radius:8px;border:1.5px solid rgba(255,255,255,.35)}
+.body{padding:22px;display:flex;flex-direction:column;gap:9px;flex:1}
+.who{font-size:.76rem;font-weight:800;color:var(--acc);letter-spacing:.04em}
+.tpl h2{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.tpl p{font-size:.92rem;color:var(--muted);flex:1}
+.sig{font-size:.84rem;border-block-start:1px dashed var(--line);padding-block-start:12px;color:var(--muted)}
+.sig b{color:var(--text)}
+.open{margin-block-start:6px;padding:12px;border-radius:12px;background:var(--text);color:var(--bg);font-weight:800;font-size:.9rem;text-align:center;transition:.2s}
+.open:hover{background:var(--acc);color:#fff}
+
+.note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin-block-end:60px}
+.secdiv{border-block-start:1px solid var(--line);padding-block:44px 30px;margin-block-start:6px}
+.secdiv h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:-.02em;margin-block:10px 12px}
+.secdiv p{color:var(--muted);max-width:70ch;font-size:.95rem}
+.note h3{font-size:1.05rem;font-weight:800;margin-block-end:10px}
+.note ol{margin-inline-start:18px;color:var(--muted);font-size:.94rem}
+.note li{margin-block-end:6px}
+.note code{font-family:var(--ff-en);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:.86rem}
+footer{border-block-start:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+/* ===== صور النماذج · Sample imagery (watermarked) ===== */
+.imgfill{position:relative;overflow:hidden}
+.imgbox{position:relative;overflow:hidden;line-height:0;background:#101820}
+.imgbox>svg,.imgfill>svg,.imgband>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.imgrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.imgrow .imgbox{aspect-ratio:4/3;border-radius:16px}
+.imgband{position:relative;overflow:hidden;border-radius:20px;aspect-ratio:16/9;line-height:0;background:#101820}
+.imgcap{font-size:.82rem;color:var(--muted);margin-block-start:16px;text-align:center}
+.imgcap b{color:inherit}
+@media(max-width:760px){.imgrow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <span class="brand"><i>14</i> معرض النماذج</span>
+  <div class="tools"><button class="ico" onclick="tt()" id="ti" aria-label="الوضع الليلي">🌙</button></div>
+</div></header>
+
+<section class="intro"><div class="wrap">
+  <div class="kick">TEMPLATES</div>
+  <h1>أربعة عشر نموذجاً جاهزاً — لكل قطاع وشخص هوية مختلفة</h1>
+  <p>كل نموذج ملف <code>HTML</code> واحد مستقل، بدون أي إطار عمل. افتحه بالمتصفح مباشرة، أو ارفعه على أي استضافة كما هو. ستة نماذج لقطاعات الأعمال، وثمانية حسابات شخصية بورتفوليو. اضغط على أي بطاقة لمعاينة النموذج كاملاً.</p>
+  <div class="feats">
+    <span class="feat">عربي / إنجليزي بتبديل فوري</span>
+    <span class="feat">انعكاس RTL كامل</span>
+    <span class="feat">وضع ليلي ونهاري</span>
+    <span class="feat">متجاوب مع الجوال</span>
+    <span class="feat">نماذج ترسل على واتساب</span>
+    <span class="feat">ملف واحد بدون مكتبات</span>
+    <span class="feat">صور توضيحية مدمجة (SVG متجهي)</span>
+    <span class="feat">علامة مائية «نموذج» على كل صورة</span>
+  </div>
+</div></section>
+
+<div class="wrap grid">
+
+  <a class="tpl" href="01-clinic.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#2C8C8A,#12333A)"><b>01</b><svg class="ph-svg " viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة العيادة — Sample clinic interior" shape-rendering="geometricPrecision"><defs><pattern id="ix1wm" width="258" height="146" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="5" y="38" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#0B1116" fill-opacity=".13">نموذج</text>
+<text x="7" y="60" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#0B1116" fill-opacity=".095">SAMPLE</text>
+<text x="138" y="110" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#0B1116" fill-opacity=".13">نموذج</text>
+<text x="139" y="132" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#0B1116" fill-opacity=".095">SAMPLE</text>
+</pattern><filter id="ix1gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix1sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><linearGradient id="ix1wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2FAF8"/><stop offset="1" stop-color="#D5E8E4"/></linearGradient><linearGradient id="ix1win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFEAF2"/><stop offset="1" stop-color="#8FC7D4"/></linearGradient><linearGradient id="ix1bed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEAE7"/></linearGradient><linearGradient id="ix1cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2C8C8A"/><stop offset="1" stop-color="#1A5D60"/></linearGradient><radialGradient id="ix1beam" cx="22%" cy="26%" r="55%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="675" fill="url(#ix1wall)"/>
+<rect x="0" y="512" width="1200" height="163" fill="#C4DCD8"/>
+<rect x="0" y="504" width="1200" height="12" fill="#AECCC8"/>
+<g opacity=".5" stroke="#B2D0CC" stroke-width="2">
+<path d="M0 560 H1200"/><path d="M0 612 H1200"/><path d="M180 512 V675"/><path d="M520 512 V675"/><path d="M860 512 V675"/></g>
+<path d="M112 504 V246 A 118 118 0 0 1 348 246 V504 Z" fill="url(#ix1win)" stroke="#9FC3C0" stroke-width="5"/>
+<g stroke="#EAF6F4" stroke-width="6" opacity=".9"><path d="M230 132 V504"/><path d="M112 336 H348"/></g>
+<path d="M118 300 L 340 168 L 344 214 L 130 344 Z" fill="#FFFFFF" opacity=".3"/>
+<rect width="1200" height="675" fill="url(#ix1beam)"/>
+<circle cx="640" cy="176" r="46" fill="#FFFFFF" stroke="#B9D5D1" stroke-width="5"/>
+<circle cx="640" cy="176" r="4" fill="#12333A"/>
+<path d="M640 176 V150 M640 176 L 658 186" stroke="#12333A" stroke-width="4" stroke-linecap="round"/>
+<rect x="742" y="128" width="132" height="96" rx="8" fill="#FFFFFF" stroke="#BBD7D3" stroke-width="5"/>
+<path d="M754 210 L 792 160 L 822 194 L 846 172 L 862 210 Z" fill="#9FCFC9"/><circle cx="836" cy="152" r="10" fill="#DFA25C"/>
+<g filter="url(#ix1sh)">
+<rect x="452" y="392" width="428" height="66" rx="18" fill="url(#ix1bed)"/>
+<path d="M452 392 h96 a18 18 0 0 0 0 -36 h-58 a38 38 0 0 0 -38 38 Z" fill="#EFF8F6"/>
+<rect x="470" y="330" width="120" height="34" rx="14" fill="#2C8C8A" opacity=".82"/>
+<rect x="452" y="446" width="428" height="16" rx="8" fill="#DFA25C" opacity=".85"/>
+<rect x="486" y="462" width="16" height="60" rx="6" fill="#7E9C99"/><rect x="828" y="462" width="16" height="60" rx="6" fill="#7E9C99"/>
+</g>
+<rect x="452" y="410" width="428" height="10" fill="#FFFFFF" opacity=".7"/>
+<g filter="url(#ix1sh)"><rect x="944" y="336" width="212" height="186" rx="12" fill="url(#ix1cab)"/>
+<g fill="#EAF6F4" opacity=".85"><rect x="962" y="356" width="176" height="42" rx="7"/><rect x="962" y="410" width="176" height="42" rx="7"/><rect x="962" y="464" width="176" height="42" rx="7"/></g>
+<g fill="#12333A" opacity=".5"><rect x="1030" y="373" width="40" height="7" rx="3.5"/><rect x="1030" y="427" width="40" height="7" rx="3.5"/><rect x="1030" y="481" width="40" height="7" rx="3.5"/></g>
+<rect x="972" y="292" width="34" height="46" rx="7" fill="#DFA25C"/><rect x="1016" y="304" width="52" height="34" rx="6" fill="#EAF6F4"/>
+<circle cx="1108" cy="316" r="22" fill="#9FCFC9"/></g>
+<g filter="url(#ix1sh)"><path d="M182 522 h84 l-12 96 h-60 Z" fill="#C77E4A"/>
+<path d="M224 522 C 174 486, 168 424, 206 400 C 236 430, 240 484, 224 522 Z" fill="#3E8F6E"/>
+<path d="M224 522 C 276 492, 292 430, 258 400 C 226 428, 216 484, 224 522 Z" fill="#57A87F"/>
+<path d="M224 522 C 214 470, 224 424, 224 400" stroke="#2C6B52" stroke-width="4" fill="none"/></g><rect x="0" y="0" width="1200" height="675" fill="url(#ix1wm)"/><rect x="0" y="0" width="1200" height="675" filter="url(#ix1gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="1035" y="620" width="148" height="38" rx="19" fill="rgba(255,255,255,.72)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/>
+<circle cx="1055" cy="639" r="5.2" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="1068" y="641" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="800" fill="#0B1116" dominant-baseline="middle">نموذج</text>
+<text x="1171" y="641" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.7" fill="#0B1116" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#2C8C8A"></span><span class="dot" style="background:#DDEDEB"></span><span class="dot" style="background:#DFA25C"></span></div>
+    <div class="body">
+      <div class="who">فرد / مهني مستقل</div>
+      <h2>عيادة نَسَم — طبيب أو عيادة</h2>
+      <p>هوية عيادية هادئة بأقواس ناعمة. يصلح لطبيب، أخصائي تغذية، معالج طبيعي، أو أي عيادة صغيرة.</p>
+      <div class="sig">العنصر المميّز: <b>شريط حجز بخطوتين</b> يرسل الطلب على واتساب</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="02-law-firm.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#7A2A3C,#10161D)"><b>02</b><svg class="ph-svg " viewBox="0 0 1000 780" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة المكتب — Sample law office" shape-rendering="geometricPrecision"><defs><pattern id="ix2wm" width="245" height="139" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="5" y="36" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="25" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="7" y="57" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.1" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="131" y="105" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="25" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="133" y="126" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.1" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix2gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix2sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><linearGradient id="ix2bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1016"/><stop offset="0.55" stop-color="#241419"/><stop offset="1" stop-color="#0E1116"/></linearGradient><radialGradient id="ix2lamp" cx="76%" cy="52%" r="46%"><stop offset="0" stop-color="#F4CE8A" stop-opacity=".55"/><stop offset="0.4" stop-color="#C8913F" stop-opacity=".18"/><stop offset="1" stop-color="#C8913F" stop-opacity="0"/></radialGradient><linearGradient id="ix2win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E3244"/><stop offset="1" stop-color="#2A1720"/></linearGradient><linearGradient id="ix2wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E28"/><stop offset="1" stop-color="#2E1C1A"/></linearGradient><linearGradient id="ix2gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9B364"/><stop offset="1" stop-color="#9C7729"/></linearGradient></defs><rect width="1000" height="780" fill="url(#ix2bg)"/>
+<path d="M660 620 V300 A 130 130 0 0 1 920 300 V620 Z" fill="url(#ix2win)" opacity=".9"/>
+<g stroke="#0E1116" stroke-width="9" opacity=".8"><path d="M790 176 V620"/><path d="M660 396 H920"/></g>
+<rect width="1000" height="780" fill="url(#ix2lamp)"/>
+<rect x="72" y="150" width="340" height="440" rx="8" fill="url(#ix2wood)" filter="url(#ix2sh)"/>
+<rect x="92" y="184" width="30" height="100" rx="3" fill="#EDE6D6"/><rect x="95" y="196" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="126" y="192" width="30" height="92" rx="3" fill="#7A2A3C"/><rect x="129" y="204" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="160" y="200" width="22" height="84" rx="3" fill="#C9BFA6"/><rect x="163" y="212" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="186" y="184" width="30" height="100" rx="3" fill="#D9B364"/><rect x="189" y="196" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="220" y="200" width="22" height="84" rx="3" fill="#EDE6D6"/><rect x="223" y="212" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="246" y="192" width="30" height="92" rx="3" fill="#7A2A3C"/><rect x="249" y="204" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="280" y="200" width="22" height="84" rx="3" fill="#C9BFA6"/><rect x="283" y="212" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="306" y="184" width="18" height="100" rx="3" fill="#D9B364"/><rect x="309" y="196" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="328" y="192" width="30" height="92" rx="3" fill="#C9BFA6"/><rect x="331" y="204" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="362" y="184" width="22" height="100" rx="3" fill="#D9B364"/><rect x="365" y="196" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="388" y="184" width="18" height="100" rx="3" fill="#EDE6D6"/><rect x="391" y="196" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="92" y="326" width="18" height="84" rx="3" fill="#D9B364"/><rect x="95" y="338" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="114" y="326" width="18" height="84" rx="3" fill="#C9BFA6"/><rect x="117" y="338" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="136" y="310" width="22" height="100" rx="3" fill="#7A2A3C"/><rect x="139" y="322" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="162" y="318" width="18" height="92" rx="3" fill="#C9BFA6"/><rect x="165" y="330" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="184" y="318" width="26" height="92" rx="3" fill="#7A2A3C"/><rect x="187" y="330" width="20" height="4" fill="#1A1016" opacity=".35"/><rect x="214" y="310" width="22" height="100" rx="3" fill="#EDE6D6"/><rect x="217" y="322" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="240" y="310" width="22" height="100" rx="3" fill="#7A2A3C"/><rect x="243" y="322" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="266" y="318" width="26" height="92" rx="3" fill="#C9BFA6"/><rect x="269" y="330" width="20" height="4" fill="#1A1016" opacity=".35"/><rect x="296" y="310" width="18" height="100" rx="3" fill="#7A2A3C"/><rect x="299" y="322" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="318" y="318" width="18" height="92" rx="3" fill="#EDE6D6"/><rect x="321" y="330" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="340" y="318" width="26" height="92" rx="3" fill="#D9B364"/><rect x="343" y="330" width="20" height="4" fill="#1A1016" opacity=".35"/><rect x="370" y="310" width="18" height="100" rx="3" fill="#C9BFA6"/><rect x="373" y="322" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="92" y="444" width="26" height="92" rx="3" fill="#C9BFA6"/><rect x="95" y="456" width="20" height="4" fill="#1A1016" opacity=".35"/><rect x="122" y="436" width="22" height="100" rx="3" fill="#7A2A3C"/><rect x="125" y="448" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="148" y="452" width="26" height="84" rx="3" fill="#C9BFA6"/><rect x="151" y="464" width="20" height="4" fill="#1A1016" opacity=".35"/><rect x="178" y="436" width="18" height="100" rx="3" fill="#7A2A3C"/><rect x="181" y="448" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="200" y="444" width="18" height="92" rx="3" fill="#EDE6D6"/><rect x="203" y="456" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="222" y="444" width="18" height="92" rx="3" fill="#D9B364"/><rect x="225" y="456" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="244" y="452" width="30" height="84" rx="3" fill="#C9BFA6"/><rect x="247" y="464" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="278" y="436" width="18" height="100" rx="3" fill="#D9B364"/><rect x="281" y="448" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="300" y="452" width="18" height="84" rx="3" fill="#C9BFA6"/><rect x="303" y="464" width="12" height="4" fill="#1A1016" opacity=".35"/><rect x="322" y="452" width="22" height="84" rx="3" fill="#7A2A3C"/><rect x="325" y="464" width="16" height="4" fill="#1A1016" opacity=".35"/><rect x="348" y="444" width="30" height="92" rx="3" fill="#C9BFA6"/><rect x="351" y="456" width="24" height="4" fill="#1A1016" opacity=".35"/><rect x="382" y="444" width="30" height="92" rx="3" fill="#D9B364"/><rect x="385" y="456" width="24" height="4" fill="#1A1016" opacity=".35"/>
+<g fill="#1A1016" opacity=".7"><rect x="84" y="284" width="316" height="12"/><rect x="84" y="410" width="316" height="12"/><rect x="84" y="536" width="316" height="12"/></g>
+<rect x="0" y="616" width="1000" height="164" fill="#120C10"/>
+<rect x="60" y="616" width="880" height="28" rx="6" fill="url(#ix2wood)"/>
+<rect x="96" y="644" width="808" height="96" fill="#26161A"/>
+<g opacity=".35" stroke="#5A3B33" stroke-width="2"><path d="M200 644 V740"/><path d="M420 644 V740"/><path d="M640 644 V740"/><path d="M820 644 V740"/></g>
+<g filter="url(#ix2sh)">
+<ellipse cx="520" cy="612" rx="62" ry="12" fill="url(#ix2gold)"/>
+<rect x="513" y="470" width="14" height="142" fill="url(#ix2gold)"/>
+<rect x="400" y="462" width="240" height="10" rx="5" fill="url(#ix2gold)"/>
+<circle cx="520" cy="450" r="13" fill="#E6C57C"/>
+<g stroke="#C9A353" stroke-width="3"><path d="M424 472 V520"/><path d="M616 472 V520"/></g>
+<path d="M386 520 a38 20 0 0 0 76 0 Z" fill="#C9A353"/><ellipse cx="424" cy="520" rx="38" ry="8" fill="#E6C57C"/>
+<path d="M578 520 a38 20 0 0 0 76 0 Z" fill="#B08F45"/><ellipse cx="616" cy="520" rx="38" ry="8" fill="#D6B265"/>
+</g>
+<g filter="url(#ix2sh)">
+<rect x="694" y="574" width="176" height="16" rx="3" fill="#EDE6D6"/>
+<rect x="702" y="558" width="168" height="16" rx="3" fill="#C9BFA6"/>
+<rect x="690" y="542" width="176" height="16" rx="3" fill="#EDE6D6"/>
+<rect x="716" y="520" width="120" height="22" rx="4" fill="#7A2A3C"/>
+</g>
+<g filter="url(#ix2sh)" transform="translate(180,506)">
+<rect x="0" y="66" width="130" height="14" rx="5" fill="#6B4A2E"/>
+<rect x="86" y="30" width="56" height="42" rx="8" fill="#8A5A32" transform="rotate(-16 114 51)"/>
+<rect x="10" y="52" width="96" height="12" rx="6" fill="#A6753F" transform="rotate(-16 58 58)"/>
+</g>
+<g opacity=".5"><path d="M96 700 H904" stroke="#4A2E28" stroke-width="3"/></g><rect x="0" y="0" width="1000" height="780" fill="url(#ix2wm)"/><rect x="0" y="0" width="1000" height="780" filter="url(#ix2gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="843" y="728" width="141" height="36" rx="18" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.1"/>
+<circle cx="861" cy="746" r="4.9" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="874" y="747" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="972" y="747" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.6" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#7A2A3C"></span><span class="dot" style="background:#A8843F"></span><span class="dot" style="background:#EDEFF2"></span></div>
+    <div class="body">
+      <div class="who">مكتب مهني</div>
+      <h2>مكتب الميزان — محاماة واستشارات</h2>
+      <p>تخطيط يشبه الوثيقة القانونية. يصلح لمكتب محاماة، مكتب محاسبة، أو استشارات إدارية.</p>
+      <div class="sig">العنصر المميّز: <b>فهرس جانبي</b> يتتبّع موضع القراءة + نموذج استشارة</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="03-contracting.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#EF9C0A,#16191E)"><b>03</b><svg class="ph-svg " viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة بعد التنفيذ — Sample after photo" shape-rendering="geometricPrecision"><defs><pattern id="ix3wm" width="258" height="146" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="5" y="38" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#0B1116" fill-opacity=".13">نموذج</text>
+<text x="7" y="60" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#0B1116" fill-opacity=".095">SAMPLE</text>
+<text x="138" y="110" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#0B1116" fill-opacity=".13">نموذج</text>
+<text x="139" y="132" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#0B1116" fill-opacity=".095">SAMPLE</text>
+</pattern><filter id="ix3gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix3sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><linearGradient id="ix3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD3E6"/><stop offset="0.6" stop-color="#D8ECF3"/><stop offset="1" stop-color="#F0F6F5"/></linearGradient><radialGradient id="ix3sun" cx="16%" cy="12%" r="42%"><stop offset="0" stop-color="#FFF3D2" stop-opacity=".85"/><stop offset="1" stop-color="#FFF3D2" stop-opacity="0"/></radialGradient><linearGradient id="ix3wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2EADC"/><stop offset="1" stop-color="#D9CEBC"/></linearGradient><linearGradient id="ix3glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FC4DA"/><stop offset="1" stop-color="#3F6E88"/></linearGradient></defs><rect width="1200" height="675" fill="url(#ix3sky)"/>
+<rect width="1200" height="675" fill="url(#ix3sun)"/>
+<rect x="0" y="588" width="1200" height="87" fill="#C6CBD0"/>
+<rect x="200" y="130" width="800" height="466" fill="url(#ix3wall)" filter="url(#ix3sh)"/>
+<g opacity=".35" stroke="#6E675C" stroke-width="2">
+<path d="M352 130 V596"/><path d="M504 130 V596"/><path d="M656 130 V596"/><path d="M808 130 V596"/>
+<path d="M200 258 H1000"/><path d="M200 354 H1000"/><path d="M200 450 H1000"/></g>
+<rect x="236" y="168" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M236 234 L 348 168 L 348 184 L 258 234 Z" fill="#FFFFFF" opacity=".22"/><rect x="232" y="164" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="388" y="168" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M388 234 L 500 168 L 500 184 L 410 234 Z" fill="#FFFFFF" opacity=".22"/><rect x="384" y="164" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="540" y="168" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M540 234 L 652 168 L 652 184 L 562 234 Z" fill="#FFFFFF" opacity=".22"/><rect x="536" y="164" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="692" y="168" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M692 234 L 804 168 L 804 184 L 714 234 Z" fill="#FFFFFF" opacity=".22"/><rect x="688" y="164" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="844" y="168" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M844 234 L 956 168 L 956 184 L 866 234 Z" fill="#FFFFFF" opacity=".22"/><rect x="840" y="164" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="236" y="264" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M236 330 L 348 264 L 348 280 L 258 330 Z" fill="#FFFFFF" opacity=".22"/><rect x="232" y="260" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="388" y="264" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M388 330 L 500 264 L 500 280 L 410 330 Z" fill="#FFFFFF" opacity=".22"/><rect x="384" y="260" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="540" y="264" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M540 330 L 652 264 L 652 280 L 562 330 Z" fill="#FFFFFF" opacity=".22"/><rect x="536" y="260" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="692" y="264" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M692 330 L 804 264 L 804 280 L 714 330 Z" fill="#FFFFFF" opacity=".22"/><rect x="688" y="260" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="844" y="264" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M844 330 L 956 264 L 956 280 L 866 330 Z" fill="#FFFFFF" opacity=".22"/><rect x="840" y="260" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="236" y="360" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M236 426 L 348 360 L 348 376 L 258 426 Z" fill="#FFFFFF" opacity=".22"/><rect x="232" y="356" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="388" y="360" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M388 426 L 500 360 L 500 376 L 410 426 Z" fill="#FFFFFF" opacity=".22"/><rect x="384" y="356" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="540" y="360" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M540 426 L 652 360 L 652 376 L 562 426 Z" fill="#FFFFFF" opacity=".22"/><rect x="536" y="356" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="692" y="360" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M692 426 L 804 360 L 804 376 L 714 426 Z" fill="#FFFFFF" opacity=".22"/><rect x="688" y="356" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="844" y="360" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M844 426 L 956 360 L 956 376 L 866 426 Z" fill="#FFFFFF" opacity=".22"/><rect x="840" y="356" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="236" y="456" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M236 522 L 348 456 L 348 472 L 258 522 Z" fill="#FFFFFF" opacity=".22"/><rect x="232" y="452" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="388" y="456" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M388 522 L 500 456 L 500 472 L 410 522 Z" fill="#FFFFFF" opacity=".22"/><rect x="384" y="452" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="540" y="456" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M540 522 L 652 456 L 652 472 L 562 522 Z" fill="#FFFFFF" opacity=".22"/><rect x="536" y="452" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="692" y="456" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M692 522 L 804 456 L 804 472 L 714 522 Z" fill="#FFFFFF" opacity=".22"/><rect x="688" y="452" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/><rect x="844" y="456" width="112" height="66" rx="4" fill="url(#ix3glass)"/><path d="M844 522 L 956 456 L 956 472 L 866 522 Z" fill="#FFFFFF" opacity=".22"/><rect x="840" y="452" width="120" height="74" rx="5" fill="none" stroke="#B9AE9A" stroke-width="3"/>
+<rect x="200" y="120" width="800" height="16" fill="#EF9C0A"/>
+<rect x="470" y="470" width="260" height="110" rx="6" fill="url(#ix3glass)"/>
+<rect x="452" y="446" width="296" height="26" rx="6" fill="#EF9C0A"/>
+<rect x="596" y="470" width="8" height="110" fill="#E9E2D4"/>
+<g fill="#3E7A4E"><ellipse cx="330" cy="556" rx="46" ry="30"/><ellipse cx="880" cy="556" rx="46" ry="30"/></g>
+<g fill="#C6BCA8"><rect x="290" y="566" width="80" height="30" rx="6"/><rect x="840" y="566" width="80" height="30" rx="6"/></g>
+<g stroke="#2C3238" stroke-width="4" opacity=".7"><path d="M200 596 H1000"/></g>
+<rect x="0" y="612" width="1200" height="6" fill="#B4BABF"/>
+<g opacity=".18"><path d="M200 596 L 150 675 H 1050 L 1000 596 Z" fill="#2A2E33"/></g><rect x="0" y="0" width="1200" height="675" fill="url(#ix3wm)"/><rect x="0" y="0" width="1200" height="675" filter="url(#ix3gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="1035" y="620" width="148" height="38" rx="19" fill="rgba(255,255,255,.72)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/>
+<circle cx="1055" cy="639" r="5.2" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="1068" y="641" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="800" fill="#0B1116" dominant-baseline="middle">نموذج</text>
+<text x="1171" y="641" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.7" fill="#0B1116" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#EF9C0A"></span><span class="dot" style="background:#16191E"></span><span class="dot" style="background:#E8E6E2"></span></div>
+    <div class="body">
+      <div class="who">شركة</div>
+      <h2>الركن الصلب — مقاولات وإنشاءات</h2>
+      <p>كتل ثقيلة وأصفر سلامة. يصلح لمقاول، ورشة صيانة، أو شركة تشغيل وصيانة.</p>
+      <div class="sig">العنصر المميّز: <b>منزلق قبل/بعد</b> + معرض مشاريع بفلاتر</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="04-restaurant.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#93B84C,#2A1B2E)"><b>04</b><svg class="ph-svg " viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة الطبق — Sample dish photo" shape-rendering="geometricPrecision"><defs><pattern id="ix4wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix4gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix4sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix4tbl" cx="50%" cy="50%" r="72%"><stop offset="0" stop-color="#4A3050"/><stop offset="1" stop-color="#1B1020"/></radialGradient><radialGradient id="ix4plate" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#FBF7EE"/><stop offset="0.78" stop-color="#EFE7D6"/><stop offset="1" stop-color="#D9CFBB"/></radialGradient><radialGradient id="ix4rice" cx="40%" cy="34%" r="70%"><stop offset="0" stop-color="#F7EBCD"/><stop offset="1" stop-color="#D9C293"/></radialGradient><linearGradient id="ix4meat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4652F"/><stop offset="1" stop-color="#6E3417"/></linearGradient><linearGradient id="ix4lem" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DC64"/><stop offset="1" stop-color="#D2A61E"/></linearGradient></defs><rect width="800" height="800" fill="url(#ix4tbl)"/>
+<g opacity=".22" stroke="#8C6BA0" stroke-width="3">
+<path d="M0 120 H800"/><path d="M0 300 H800"/><path d="M0 500 H800"/><path d="M0 690 H800"/></g>
+<circle cx="400" cy="412" r="352" fill="#0E0812" opacity=".45"/>
+<circle cx="400" cy="400" r="348" fill="url(#ix4plate)" filter="url(#ix4sh)"/>
+<circle cx="400" cy="400" r="316" fill="none" stroke="#CFC3AA" stroke-width="4" opacity=".8"/>
+<circle cx="400" cy="400" r="300" fill="none" stroke="#93B84C" stroke-width="7" opacity=".55" stroke-dasharray="3 16" stroke-linecap="round"/>
+<ellipse cx="400" cy="424" rx="262" ry="196" fill="url(#ix4rice)"/>
+<ellipse cx="400" cy="404" rx="240" ry="176" fill="#FFFFFF" opacity=".16"/>
+<ellipse cx="528" cy="365" rx="7.0" ry="3.3" fill="#FFFFFF" opacity="0.48" transform="rotate(27 224 515)"/><ellipse cx="448" cy="498" rx="7.8" ry="3.0" fill="#FFFFFF" opacity="0.47" transform="rotate(-26 400 420)"/><ellipse cx="336" cy="397" rx="6.2" ry="2.9" fill="#FFFFFF" opacity="0.18" transform="rotate(-13 418 371)"/><ellipse cx="303" cy="534" rx="7.5" ry="2.6" fill="#FFFFFF" opacity="0.42" transform="rotate(-31 281 458)"/><ellipse cx="526" cy="413" rx="4.5" ry="2.0" fill="#FFFFFF" opacity="0.46" transform="rotate(-14 320 342)"/><ellipse cx="295" cy="374" rx="5.3" ry="2.3" fill="#FFFFFF" opacity="0.46" transform="rotate(40 314 346)"/><ellipse cx="563" cy="350" rx="7.9" ry="3.4" fill="#FFFFFF" opacity="0.28" transform="rotate(6 422 342)"/><ellipse cx="284" cy="367" rx="4.3" ry="2.5" fill="#FFFFFF" opacity="0.37" transform="rotate(-40 515 473)"/><ellipse cx="572" cy="386" rx="4.3" ry="2.6" fill="#FFFFFF" opacity="0.28" transform="rotate(0 304 423)"/><ellipse cx="451" cy="480" rx="4.7" ry="2.4" fill="#FFFFFF" opacity="0.48" transform="rotate(5 416 304)"/><ellipse cx="491" cy="501" rx="5.7" ry="2.6" fill="#FFFFFF" opacity="0.45" transform="rotate(17 233 481)"/><ellipse cx="302" cy="459" rx="7.8" ry="2.3" fill="#FFFFFF" opacity="0.42" transform="rotate(19 386 431)"/><ellipse cx="391" cy="528" rx="6.1" ry="3.2" fill="#FFFFFF" opacity="0.21" transform="rotate(7 361 309)"/><ellipse cx="431" cy="323" rx="4.8" ry="2.8" fill="#FFFFFF" opacity="0.30" transform="rotate(-22 384 370)"/><ellipse cx="569" cy="439" rx="4.4" ry="3.1" fill="#FFFFFF" opacity="0.28" transform="rotate(-30 530 338)"/><ellipse cx="579" cy="476" rx="5.2" ry="2.8" fill="#FFFFFF" opacity="0.41" transform="rotate(-30 517 436)"/><ellipse cx="417" cy="308" rx="4.9" ry="3.0" fill="#FFFFFF" opacity="0.44" transform="rotate(18 543 407)"/><ellipse cx="284" cy="314" rx="7.9" ry="3.0" fill="#FFFFFF" opacity="0.44" transform="rotate(2 316 333)"/><ellipse cx="584" cy="444" rx="7.8" ry="3.0" fill="#FFFFFF" opacity="0.43" transform="rotate(-27 296 411)"/><ellipse cx="400" cy="338" rx="4.2" ry="2.7" fill="#FFFFFF" opacity="0.23" transform="rotate(39 296 433)"/><ellipse cx="442" cy="424" rx="6.8" ry="2.5" fill="#FFFFFF" opacity="0.27" transform="rotate(20 416 530)"/><ellipse cx="285" cy="328" rx="5.5" ry="3.6" fill="#FFFFFF" opacity="0.49" transform="rotate(40 465 522)"/><ellipse cx="383" cy="346" rx="4.4" ry="2.4" fill="#FFFFFF" opacity="0.43" transform="rotate(24 394 316)"/><ellipse cx="392" cy="477" rx="6.3" ry="2.1" fill="#FFFFFF" opacity="0.28" transform="rotate(31 570 471)"/><ellipse cx="353" cy="513" rx="5.9" ry="3.2" fill="#FFFFFF" opacity="0.40" transform="rotate(-3 384 466)"/><ellipse cx="301" cy="448" rx="7.4" ry="2.8" fill="#FFFFFF" opacity="0.43" transform="rotate(1 553 370)"/><ellipse cx="447" cy="373" rx="7.3" ry="3.0" fill="#FFFFFF" opacity="0.44" transform="rotate(4 350 464)"/><ellipse cx="386" cy="488" rx="7.8" ry="2.7" fill="#FFFFFF" opacity="0.48" transform="rotate(-18 562 415)"/><ellipse cx="396" cy="385" rx="6.1" ry="2.8" fill="#FFFFFF" opacity="0.23" transform="rotate(6 454 372)"/><ellipse cx="564" cy="320" rx="6.9" ry="3.2" fill="#FFFFFF" opacity="0.23" transform="rotate(34 474 470)"/><ellipse cx="425" cy="377" rx="6.5" ry="3.2" fill="#FFFFFF" opacity="0.38" transform="rotate(-37 310 340)"/><ellipse cx="510" cy="412" rx="6.5" ry="2.3" fill="#FFFFFF" opacity="0.42" transform="rotate(-17 533 483)"/><ellipse cx="231" cy="420" rx="7.9" ry="2.3" fill="#FFFFFF" opacity="0.47" transform="rotate(-26 372 346)"/><ellipse cx="457" cy="349" rx="6.2" ry="2.7" fill="#FFFFFF" opacity="0.29" transform="rotate(38 246 451)"/><ellipse cx="314" cy="360" rx="6.9" ry="2.6" fill="#FFFFFF" opacity="0.29" transform="rotate(-5 419 521)"/><ellipse cx="268" cy="476" rx="7.3" ry="2.6" fill="#FFFFFF" opacity="0.19" transform="rotate(38 364 324)"/><ellipse cx="361" cy="439" rx="6.1" ry="3.5" fill="#FFFFFF" opacity="0.27" transform="rotate(5 276 407)"/><ellipse cx="419" cy="508" rx="6.3" ry="2.9" fill="#FFFFFF" opacity="0.33" transform="rotate(-20 515 397)"/><ellipse cx="498" cy="422" rx="7.8" ry="3.5" fill="#FFFFFF" opacity="0.37" transform="rotate(4 548 300)"/><ellipse cx="405" cy="327" rx="5.3" ry="3.5" fill="#FFFFFF" opacity="0.35" transform="rotate(1 532 524)"/><ellipse cx="498" cy="396" rx="5.7" ry="3.6" fill="#FFFFFF" opacity="0.34" transform="rotate(21 572 397)"/><ellipse cx="406" cy="518" rx="7.7" ry="3.0" fill="#FFFFFF" opacity="0.26" transform="rotate(-2 464 364)"/><ellipse cx="422" cy="305" rx="5.3" ry="3.6" fill="#FFFFFF" opacity="0.34" transform="rotate(-4 283 422)"/><ellipse cx="222" cy="331" rx="6.6" ry="3.5" fill="#FFFFFF" opacity="0.26" transform="rotate(-35 279 511)"/><ellipse cx="410" cy="303" rx="5.9" ry="2.9" fill="#FFFFFF" opacity="0.26" transform="rotate(20 228 362)"/><ellipse cx="460" cy="368" rx="7.4" ry="3.2" fill="#FFFFFF" opacity="0.27" transform="rotate(23 521 421)"/><ellipse cx="475" cy="465" rx="7.5" ry="3.4" fill="#FFFFFF" opacity="0.47" transform="rotate(-38 274 376)"/><ellipse cx="354" cy="436" rx="6.8" ry="3.0" fill="#FFFFFF" opacity="0.41" transform="rotate(-37 447 389)"/><ellipse cx="394" cy="474" rx="7.0" ry="2.9" fill="#FFFFFF" opacity="0.19" transform="rotate(-8 493 416)"/><ellipse cx="561" cy="534" rx="4.4" ry="3.1" fill="#FFFFFF" opacity="0.24" transform="rotate(14 428 452)"/><ellipse cx="504" cy="476" rx="6.8" ry="3.0" fill="#FFFFFF" opacity="0.33" transform="rotate(9 453 400)"/><ellipse cx="559" cy="518" rx="6.9" ry="3.4" fill="#FFFFFF" opacity="0.33" transform="rotate(-32 365 514)"/><ellipse cx="211" cy="477" rx="7.1" ry="2.9" fill="#FFFFFF" opacity="0.39" transform="rotate(20 369 336)"/><ellipse cx="294" cy="422" rx="6.8" ry="3.4" fill="#FFFFFF" opacity="0.49" transform="rotate(28 288 408)"/><ellipse cx="509" cy="438" rx="7.2" ry="2.1" fill="#FFFFFF" opacity="0.25" transform="rotate(-30 242 469)"/><ellipse cx="223" cy="385" rx="6.9" ry="3.6" fill="#FFFFFF" opacity="0.50" transform="rotate(22 235 331)"/><ellipse cx="272" cy="356" rx="6.5" ry="3.3" fill="#FFFFFF" opacity="0.22" transform="rotate(-23 359 480)"/><ellipse cx="434" cy="338" rx="4.7" ry="2.3" fill="#FFFFFF" opacity="0.44" transform="rotate(-32 528 354)"/><ellipse cx="232" cy="442" rx="4.4" ry="2.6" fill="#FFFFFF" opacity="0.20" transform="rotate(-33 502 447)"/><ellipse cx="270" cy="490" rx="5.6" ry="3.0" fill="#FFFFFF" opacity="0.18" transform="rotate(-29 371 475)"/><ellipse cx="517" cy="425" rx="6.0" ry="3.5" fill="#FFFFFF" opacity="0.30" transform="rotate(-33 280 478)"/><ellipse cx="360" cy="338" rx="6.3" ry="3.1" fill="#FFFFFF" opacity="0.27" transform="rotate(31 491 458)"/><ellipse cx="322" cy="367" rx="4.3" ry="2.4" fill="#FFFFFF" opacity="0.45" transform="rotate(-4 474 334)"/><ellipse cx="330" cy="521" rx="5.5" ry="3.2" fill="#FFFFFF" opacity="0.24" transform="rotate(-38 545 387)"/><ellipse cx="253" cy="446" rx="6.7" ry="2.1" fill="#FFFFFF" opacity="0.22" transform="rotate(36 442 361)"/><ellipse cx="409" cy="524" rx="5.9" ry="3.5" fill="#FFFFFF" opacity="0.21" transform="rotate(27 225 438)"/><ellipse cx="581" cy="398" rx="4.2" ry="2.2" fill="#FFFFFF" opacity="0.48" transform="rotate(-12 269 321)"/><ellipse cx="550" cy="425" rx="7.3" ry="2.2" fill="#FFFFFF" opacity="0.38" transform="rotate(5 330 374)"/><ellipse cx="380" cy="538" rx="6.5" ry="2.6" fill="#FFFFFF" opacity="0.30" transform="rotate(-23 580 512)"/><ellipse cx="393" cy="465" rx="5.2" ry="3.0" fill="#FFFFFF" opacity="0.49" transform="rotate(6 474 309)"/><ellipse cx="513" cy="446" rx="4.9" ry="2.3" fill="#FFFFFF" opacity="0.20" transform="rotate(-36 226 347)"/><ellipse cx="313" cy="350" rx="4.2" ry="3.4" fill="#FFFFFF" opacity="0.33" transform="rotate(4 210 409)"/><ellipse cx="450" cy="376" rx="7.6" ry="3.0" fill="#FFFFFF" opacity="0.32" transform="rotate(19 446 325)"/><ellipse cx="308" cy="339" rx="6.6" ry="2.1" fill="#FFFFFF" opacity="0.46" transform="rotate(20 287 441)"/><ellipse cx="340" cy="328" rx="5.1" ry="2.3" fill="#FFFFFF" opacity="0.27" transform="rotate(-10 226 423)"/><ellipse cx="226" cy="388" rx="7.7" ry="2.6" fill="#FFFFFF" opacity="0.48" transform="rotate(-38 554 416)"/><ellipse cx="451" cy="517" rx="7.8" ry="2.2" fill="#FFFFFF" opacity="0.39" transform="rotate(-3 442 472)"/><ellipse cx="332" cy="486" rx="8.0" ry="2.1" fill="#FFFFFF" opacity="0.41" transform="rotate(33 328 468)"/><ellipse cx="250" cy="458" rx="5.6" ry="3.6" fill="#FFFFFF" opacity="0.30" transform="rotate(-1 304 419)"/><ellipse cx="395" cy="372" rx="4.3" ry="3.6" fill="#FFFFFF" opacity="0.33" transform="rotate(-10 299 472)"/><ellipse cx="316" cy="540" rx="4.2" ry="3.0" fill="#FFFFFF" opacity="0.41" transform="rotate(-6 213 418)"/><ellipse cx="241" cy="415" rx="7.1" ry="2.7" fill="#FFFFFF" opacity="0.19" transform="rotate(30 475 444)"/><ellipse cx="389" cy="540" rx="4.4" ry="2.1" fill="#FFFFFF" opacity="0.47" transform="rotate(22 257 539)"/><ellipse cx="451" cy="313" rx="6.7" ry="3.0" fill="#FFFFFF" opacity="0.34" transform="rotate(-33 234 365)"/><ellipse cx="418" cy="414" rx="5.2" ry="2.1" fill="#FFFFFF" opacity="0.19" transform="rotate(-16 301 478)"/><ellipse cx="470" cy="463" rx="5.6" ry="2.9" fill="#FFFFFF" opacity="0.21" transform="rotate(0 265 322)"/><ellipse cx="487" cy="535" rx="4.6" ry="2.1" fill="#FFFFFF" opacity="0.41" transform="rotate(39 218 412)"/><ellipse cx="486" cy="391" rx="5.9" ry="2.9" fill="#FFFFFF" opacity="0.30" transform="rotate(40 277 485)"/><ellipse cx="216" cy="533" rx="7.0" ry="3.1" fill="#FFFFFF" opacity="0.47" transform="rotate(-12 493 329)"/><ellipse cx="281" cy="379" rx="5.9" ry="3.2" fill="#FFFFFF" opacity="0.26" transform="rotate(11 370 333)"/><ellipse cx="276" cy="437" rx="4.3" ry="2.4" fill="#FFFFFF" opacity="0.21" transform="rotate(14 505 470)"/><ellipse cx="335" cy="370" rx="4.2" ry="3.1" fill="#FFFFFF" opacity="0.20" transform="rotate(-15 356 525)"/><ellipse cx="401" cy="526" rx="4.4" ry="2.7" fill="#FFFFFF" opacity="0.28" transform="rotate(31 210 529)"/><ellipse cx="356" cy="467" rx="7.8" ry="2.2" fill="#FFFFFF" opacity="0.19" transform="rotate(-22 562 467)"/><ellipse cx="219" cy="486" rx="4.2" ry="2.7" fill="#FFFFFF" opacity="0.21" transform="rotate(8 497 333)"/><ellipse cx="374" cy="316" rx="5.2" ry="2.2" fill="#FFFFFF" opacity="0.34" transform="rotate(1 356 308)"/><ellipse cx="242" cy="438" rx="7.1" ry="2.9" fill="#FFFFFF" opacity="0.19" transform="rotate(-34 276 511)"/><ellipse cx="392" cy="411" rx="7.4" ry="3.5" fill="#FFFFFF" opacity="0.38" transform="rotate(-11 480 409)"/><ellipse cx="274" cy="392" rx="4.8" ry="2.6" fill="#FFFFFF" opacity="0.23" transform="rotate(39 293 486)"/><ellipse cx="258" cy="368" rx="6.1" ry="2.3" fill="#FFFFFF" opacity="0.41" transform="rotate(17 432 503)"/><ellipse cx="429" cy="330" rx="5.3" ry="2.7" fill="#FFFFFF" opacity="0.25" transform="rotate(36 432 343)"/><ellipse cx="436" cy="312" rx="7.1" ry="3.5" fill="#FFFFFF" opacity="0.35" transform="rotate(22 515 300)"/><ellipse cx="263" cy="332" rx="7.3" ry="2.7" fill="#FFFFFF" opacity="0.20" transform="rotate(-40 226 532)"/><ellipse cx="505" cy="360" rx="5.9" ry="3.4" fill="#FFFFFF" opacity="0.31" transform="rotate(-13 313 370)"/><ellipse cx="312" cy="377" rx="6.2" ry="2.6" fill="#FFFFFF" opacity="0.42" transform="rotate(-10 397 390)"/><ellipse cx="337" cy="508" rx="7.9" ry="3.3" fill="#FFFFFF" opacity="0.45" transform="rotate(39 463 402)"/><ellipse cx="388" cy="336" rx="4.6" ry="2.4" fill="#FFFFFF" opacity="0.30" transform="rotate(-28 296 401)"/><ellipse cx="260" cy="492" rx="6.9" ry="3.4" fill="#FFFFFF" opacity="0.24" transform="rotate(1 454 474)"/><ellipse cx="450" cy="520" rx="6.1" ry="2.1" fill="#FFFFFF" opacity="0.24" transform="rotate(-39 263 431)"/><ellipse cx="519" cy="450" rx="6.5" ry="3.3" fill="#FFFFFF" opacity="0.19" transform="rotate(-37 522 379)"/><ellipse cx="472" cy="398" rx="6.0" ry="2.9" fill="#FFFFFF" opacity="0.40" transform="rotate(17 506 536)"/><ellipse cx="564" cy="442" rx="6.7" ry="2.9" fill="#FFFFFF" opacity="0.44" transform="rotate(6 513 305)"/><ellipse cx="557" cy="497" rx="6.1" ry="2.5" fill="#FFFFFF" opacity="0.20" transform="rotate(-29 392 456)"/><ellipse cx="507" cy="520" rx="7.0" ry="3.1" fill="#FFFFFF" opacity="0.28" transform="rotate(-39 350 537)"/><ellipse cx="576" cy="360" rx="4.3" ry="3.2" fill="#FFFFFF" opacity="0.39" transform="rotate(-2 389 476)"/><ellipse cx="588" cy="455" rx="6.4" ry="2.3" fill="#FFFFFF" opacity="0.35" transform="rotate(-25 332 387)"/><ellipse cx="488" cy="408" rx="5.6" ry="2.0" fill="#FFFFFF" opacity="0.30" transform="rotate(-18 544 435)"/><ellipse cx="316" cy="533" rx="6.7" ry="2.5" fill="#FFFFFF" opacity="0.28" transform="rotate(30 562 483)"/><ellipse cx="401" cy="363" rx="7.5" ry="2.3" fill="#FFFFFF" opacity="0.28" transform="rotate(-6 528 319)"/><ellipse cx="295" cy="319" rx="6.5" ry="3.2" fill="#FFFFFF" opacity="0.25" transform="rotate(-32 501 444)"/>
+<g filter="url(#ix4sh)">
+<path d="M330 372 c 46 -46 128 -44 156 6 c 22 46 -18 92 -78 92 c -60 0 -104 -52 -78 -98 Z" fill="url(#ix4meat)"/>
+<path d="M352 386 c 34 -30 92 -28 110 8" stroke="#E09A5A" stroke-width="9" fill="none" opacity=".55" stroke-linecap="round"/>
+<path d="M244 448 c 36 -34 96 -30 112 12 c 14 40 -22 70 -66 66 c -46 -4 -74 -48 -46 -78 Z" fill="url(#ix4meat)"/>
+<path d="M452 480 c 40 -34 102 -22 108 22 c 6 42 -40 66 -80 54 c -38 -12 -50 -50 -28 -76 Z" fill="url(#ix4meat)"/>
+</g>
+<ellipse cx="268" cy="356" rx="13" ry="8" fill="#E8CDA0" stroke="#C7A374" stroke-width="2" transform="rotate(-20 268 356)"/><ellipse cx="520" cy="340" rx="13" ry="8" fill="#E8CDA0" stroke="#C7A374" stroke-width="2" transform="rotate(25 520 340)"/><ellipse cx="330" cy="300" rx="13" ry="8" fill="#E8CDA0" stroke="#C7A374" stroke-width="2" transform="rotate(10 330 300)"/><ellipse cx="466" cy="470" rx="13" ry="8" fill="#E8CDA0" stroke="#C7A374" stroke-width="2" transform="rotate(-35 466 470)"/><ellipse cx="596" cy="442" rx="13" ry="8" fill="#E8CDA0" stroke="#C7A374" stroke-width="2" transform="rotate(15 596 442)"/><ellipse cx="300" cy="380" rx="9" ry="7" fill="#4A2A22"/><ellipse cx="410" cy="318" rx="9" ry="7" fill="#4A2A22"/><ellipse cx="556" cy="396" rx="9" ry="7" fill="#4A2A22"/><ellipse cx="352" cy="484" rx="9" ry="7" fill="#4A2A22"/><ellipse cx="494" cy="516" rx="9" ry="7" fill="#4A2A22"/><path d="M258 470 c 14 -12 30 -10 34 4 c -14 12 -28 10 -34 -4 Z" fill="#6FA03C" transform="rotate(12 258 470)"/><path d="M560 300 c 14 -12 30 -10 34 4 c -14 12 -28 10 -34 -4 Z" fill="#6FA03C" transform="rotate(-30 560 300)"/><path d="M400 262 c 14 -12 30 -10 34 4 c -14 12 -28 10 -34 -4 Z" fill="#6FA03C" transform="rotate(60 400 262)"/><path d="M620 500 c 14 -12 30 -10 34 4 c -14 12 -28 10 -34 -4 Z" fill="#6FA03C" transform="rotate(-10 620 500)"/><path d="M300 540 c 14 -12 30 -10 34 4 c -14 12 -28 10 -34 -4 Z" fill="#6FA03C" transform="rotate(40 300 540)"/>
+<g filter="url(#ix4sh)">
+<path d="M212 330 a 68 68 0 0 1 68 -68 l 0 68 Z" fill="url(#ix4lem)"/>
+<path d="M212 330 a 68 68 0 0 1 68 -68" fill="none" stroke="#FBF3D0" stroke-width="7"/>
+<path d="M556 542 a 60 60 0 0 0 -60 -60 l 0 60 Z" fill="url(#ix4lem)"/>
+<path d="M556 542 a 60 60 0 0 0 -60 -60" fill="none" stroke="#FBF3D0" stroke-width="7"/></g>
+<g filter="url(#ix4sh)"><circle cx="588" cy="246" r="66" fill="#F3EDE0"/><circle cx="588" cy="246" r="51" fill="#C6402C"/>
+<circle cx="588" cy="246" r="51" fill="none" stroke="#8E2A1C" stroke-width="4"/>
+<ellipse cx="570" cy="228" rx="15" ry="8" fill="#FFFFFF" opacity=".28" transform="rotate(-25 570 228)"/></g><rect x="0" y="0" width="800" height="800" fill="url(#ix4wm)"/><rect x="0" y="0" width="800" height="800" filter="url(#ix4gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="662" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="678" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="690" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="776" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#93B84C"></span><span class="dot" style="background:#E9A94F"></span><span class="dot" style="background:#2A1B2E"></span></div>
+    <div class="body">
+      <div class="who">مؤسسة</div>
+      <h2>سُفرة — مطعم أو مقهى</h2>
+      <p>باذنجاني وفستقي. يصلح لمطعم، مقهى، حلويات، أو مطبخ منزلي مرخّص.</p>
+      <div class="sig">العنصر المميّز: <b>قائمة تفاعلية وسلة طلب</b> ترسل الطلب والإجمالي على واتساب</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="05-hajj-umrah.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#BE9A2E,#0B3B2E)"><b>05</b><svg class="ph-svg " viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة معمارية — Sample architectural photo" shape-rendering="geometricPrecision"><defs><pattern id="ix5wm" width="258" height="146" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="5" y="38" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="7" y="60" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="138" y="110" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="139" y="132" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix5gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix5sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><linearGradient id="ix5sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04211A"/><stop offset="0.5" stop-color="#0B3B2E"/><stop offset="1" stop-color="#14584A"/></linearGradient><radialGradient id="ix5moon" cx="18%" cy="16%" r="34%"><stop offset="0" stop-color="#FFF6DC" stop-opacity=".5"/><stop offset="1" stop-color="#FFF6DC" stop-opacity="0"/></radialGradient><linearGradient id="ix5stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0EADA"/><stop offset="1" stop-color="#C9BE9E"/></linearGradient><linearGradient id="ix5gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4C572"/><stop offset="1" stop-color="#9E7B1E"/></linearGradient></defs><rect width="1200" height="675" fill="url(#ix5sky)"/>
+<circle cx="487" cy="303" r="1.8" fill="#FFF8E4" opacity="0.51"/><circle cx="970" cy="320" r="1.9" fill="#FFF8E4" opacity="0.67"/><circle cx="960" cy="132" r="1.8" fill="#FFF8E4" opacity="0.38"/><circle cx="963" cy="276" r="2.3" fill="#FFF8E4" opacity="0.58"/><circle cx="308" cy="118" r="2.0" fill="#FFF8E4" opacity="0.86"/><circle cx="1071" cy="199" r="2.2" fill="#FFF8E4" opacity="0.72"/><circle cx="131" cy="81" r="2.2" fill="#FFF8E4" opacity="0.66"/><circle cx="616" cy="15" r="2.3" fill="#FFF8E4" opacity="0.44"/><circle cx="793" cy="218" r="1.6" fill="#FFF8E4" opacity="0.81"/><circle cx="910" cy="68" r="2.4" fill="#FFF8E4" opacity="0.32"/><circle cx="278" cy="253" r="1.3" fill="#FFF8E4" opacity="0.93"/><circle cx="893" cy="320" r="2.4" fill="#FFF8E4" opacity="0.54"/><circle cx="790" cy="293" r="1.5" fill="#FFF8E4" opacity="0.66"/><circle cx="1196" cy="118" r="2.4" fill="#FFF8E4" opacity="0.73"/><circle cx="58" cy="143" r="2.6" fill="#FFF8E4" opacity="0.72"/><circle cx="334" cy="167" r="2.5" fill="#FFF8E4" opacity="0.88"/><circle cx="1165" cy="53" r="2.1" fill="#FFF8E4" opacity="0.40"/><circle cx="1174" cy="136" r="1.4" fill="#FFF8E4" opacity="0.29"/><circle cx="990" cy="45" r="1.5" fill="#FFF8E4" opacity="0.30"/><circle cx="308" cy="10" r="1.4" fill="#FFF8E4" opacity="0.79"/><circle cx="243" cy="22" r="1.9" fill="#FFF8E4" opacity="0.78"/><circle cx="773" cy="300" r="1.5" fill="#FFF8E4" opacity="0.87"/><circle cx="571" cy="258" r="1.3" fill="#FFF8E4" opacity="0.28"/><circle cx="14" cy="39" r="1.1" fill="#FFF8E4" opacity="0.62"/><circle cx="404" cy="208" r="1.4" fill="#FFF8E4" opacity="0.43"/><circle cx="86" cy="173" r="1.4" fill="#FFF8E4" opacity="0.92"/><circle cx="773" cy="192" r="1.7" fill="#FFF8E4" opacity="0.61"/><circle cx="1145" cy="52" r="2.0" fill="#FFF8E4" opacity="0.91"/><circle cx="1038" cy="138" r="1.6" fill="#FFF8E4" opacity="0.75"/><circle cx="486" cy="154" r="1.6" fill="#FFF8E4" opacity="0.43"/><circle cx="620" cy="280" r="1.5" fill="#FFF8E4" opacity="0.80"/><circle cx="1187" cy="161" r="0.9" fill="#FFF8E4" opacity="0.68"/><circle cx="272" cy="30" r="2.0" fill="#FFF8E4" opacity="0.48"/><circle cx="722" cy="180" r="1.9" fill="#FFF8E4" opacity="0.45"/><circle cx="1002" cy="11" r="1.9" fill="#FFF8E4" opacity="0.92"/><circle cx="43" cy="189" r="1.3" fill="#FFF8E4" opacity="0.57"/><circle cx="655" cy="90" r="1.5" fill="#FFF8E4" opacity="0.47"/><circle cx="756" cy="304" r="1.3" fill="#FFF8E4" opacity="0.80"/><circle cx="214" cy="13" r="2.6" fill="#FFF8E4" opacity="0.73"/><circle cx="269" cy="158" r="1.8" fill="#FFF8E4" opacity="0.71"/><circle cx="551" cy="122" r="1.5" fill="#FFF8E4" opacity="0.72"/><circle cx="198" cy="52" r="1.9" fill="#FFF8E4" opacity="0.91"/><circle cx="459" cy="224" r="2.3" fill="#FFF8E4" opacity="0.92"/><circle cx="163" cy="172" r="2.2" fill="#FFF8E4" opacity="0.40"/><circle cx="1164" cy="230" r="1.4" fill="#FFF8E4" opacity="0.80"/><circle cx="69" cy="271" r="2.5" fill="#FFF8E4" opacity="0.47"/><circle cx="1177" cy="93" r="2.4" fill="#FFF8E4" opacity="0.49"/><circle cx="175" cy="317" r="1.5" fill="#FFF8E4" opacity="0.34"/><circle cx="597" cy="265" r="2.2" fill="#FFF8E4" opacity="0.44"/><circle cx="709" cy="324" r="1.6" fill="#FFF8E4" opacity="0.54"/><circle cx="838" cy="18" r="2.5" fill="#FFF8E4" opacity="0.36"/><circle cx="9" cy="244" r="2.5" fill="#FFF8E4" opacity="0.87"/><circle cx="1044" cy="222" r="1.9" fill="#FFF8E4" opacity="0.94"/><circle cx="454" cy="16" r="2.2" fill="#FFF8E4" opacity="0.84"/><circle cx="1062" cy="147" r="1.8" fill="#FFF8E4" opacity="0.87"/><circle cx="139" cy="301" r="2.6" fill="#FFF8E4" opacity="0.33"/><circle cx="500" cy="23" r="1.0" fill="#FFF8E4" opacity="0.81"/><circle cx="1049" cy="101" r="2.4" fill="#FFF8E4" opacity="0.88"/><circle cx="1181" cy="25" r="0.9" fill="#FFF8E4" opacity="0.77"/><circle cx="351" cy="257" r="1.4" fill="#FFF8E4" opacity="0.71"/><circle cx="1075" cy="274" r="1.6" fill="#FFF8E4" opacity="0.91"/><circle cx="232" cy="174" r="1.1" fill="#FFF8E4" opacity="0.93"/><circle cx="1107" cy="244" r="2.3" fill="#FFF8E4" opacity="0.29"/><circle cx="452" cy="101" r="1.1" fill="#FFF8E4" opacity="0.87"/><circle cx="244" cy="87" r="1.3" fill="#FFF8E4" opacity="0.44"/><circle cx="263" cy="3" r="1.7" fill="#FFF8E4" opacity="0.65"/><circle cx="819" cy="25" r="2.2" fill="#FFF8E4" opacity="0.42"/><circle cx="1079" cy="266" r="1.6" fill="#FFF8E4" opacity="0.58"/><circle cx="3" cy="28" r="2.2" fill="#FFF8E4" opacity="0.28"/><circle cx="102" cy="35" r="1.7" fill="#FFF8E4" opacity="0.27"/><circle cx="176" cy="263" r="1.8" fill="#FFF8E4" opacity="0.47"/><circle cx="644" cy="36" r="1.5" fill="#FFF8E4" opacity="0.70"/><circle cx="622" cy="184" r="1.4" fill="#FFF8E4" opacity="0.94"/><circle cx="877" cy="63" r="1.1" fill="#FFF8E4" opacity="0.25"/><circle cx="778" cy="40" r="1.9" fill="#FFF8E4" opacity="0.28"/><circle cx="943" cy="309" r="2.0" fill="#FFF8E4" opacity="0.63"/><circle cx="88" cy="318" r="2.4" fill="#FFF8E4" opacity="0.29"/><circle cx="1016" cy="161" r="1.6" fill="#FFF8E4" opacity="0.74"/><circle cx="943" cy="9" r="1.3" fill="#FFF8E4" opacity="0.63"/><circle cx="146" cy="217" r="1.3" fill="#FFF8E4" opacity="0.34"/><circle cx="57" cy="166" r="1.5" fill="#FFF8E4" opacity="0.88"/><circle cx="536" cy="62" r="1.7" fill="#FFF8E4" opacity="0.34"/><circle cx="1085" cy="192" r="2.0" fill="#FFF8E4" opacity="0.76"/><circle cx="1154" cy="272" r="1.1" fill="#FFF8E4" opacity="0.66"/><circle cx="10" cy="242" r="1.1" fill="#FFF8E4" opacity="0.79"/><circle cx="90" cy="269" r="1.1" fill="#FFF8E4" opacity="0.32"/><circle cx="769" cy="91" r="2.3" fill="#FFF8E4" opacity="0.49"/><circle cx="248" cy="13" r="2.3" fill="#FFF8E4" opacity="0.72"/><circle cx="582" cy="296" r="1.4" fill="#FFF8E4" opacity="0.31"/><circle cx="1154" cy="261" r="1.8" fill="#FFF8E4" opacity="0.42"/>
+<rect width="1200" height="675" fill="url(#ix5moon)"/>
+<g opacity=".5" fill="#08291F">
+<rect x="60" y="140" width="34" height="420" rx="10"/><path d="M60 146 l 17 -46 l 17 46 Z"/><rect x="52" y="196" width="50" height="10" rx="4"/>
+<rect x="1108" y="176" width="30" height="384" rx="10"/><path d="M1108 182 l 15 -42 l 15 42 Z"/><rect x="1100" y="226" width="46" height="9" rx="4"/>
+<path d="M760 300 a 96 68 0 0 1 192 0 Z"/></g>
+<g><path d="M452 292 a 148 122 0 0 1 296 0 Z" fill="url(#ix5stone)"/>
+<path d="M452 292 a 148 122 0 0 1 296 0" fill="none" stroke="url(#ix5gold)" stroke-width="5" opacity=".9"/>
+<rect x="584" y="146" width="32" height="34" rx="9" fill="url(#ix5gold)"/><rect x="594" y="118" width="12" height="30" rx="6" fill="url(#ix5gold)"/>
+<rect x="440" y="286" width="320" height="14" rx="5" fill="url(#ix5gold)" opacity=".8"/></g>
+<path d="M90 560 V 388 A 62 62 0 0 1 214 388 V 560 Z" fill="url(#ix5stone)"/><path d="M104 560 V 392 A 48 48 0 0 1 200 392 V 560 Z" fill="#08281F"/><path d="M104 560 V 392 A 48 48 0 0 1 200 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="82" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="152" cy="336" r="9" fill="url(#ix5gold)"/><path d="M266 560 V 388 A 62 62 0 0 1 390 388 V 560 Z" fill="url(#ix5stone)"/><path d="M280 560 V 392 A 48 48 0 0 1 376 392 V 560 Z" fill="#08281F"/><path d="M280 560 V 392 A 48 48 0 0 1 376 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="258" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="328" cy="336" r="9" fill="url(#ix5gold)"/><path d="M442 560 V 388 A 62 62 0 0 1 566 388 V 560 Z" fill="url(#ix5stone)"/><path d="M456 560 V 392 A 48 48 0 0 1 552 392 V 560 Z" fill="#08281F"/><path d="M456 560 V 392 A 48 48 0 0 1 552 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="434" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="504" cy="336" r="9" fill="url(#ix5gold)"/><path d="M618 560 V 388 A 62 62 0 0 1 742 388 V 560 Z" fill="url(#ix5stone)"/><path d="M632 560 V 392 A 48 48 0 0 1 728 392 V 560 Z" fill="#08281F"/><path d="M632 560 V 392 A 48 48 0 0 1 728 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="610" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="680" cy="336" r="9" fill="url(#ix5gold)"/><path d="M794 560 V 388 A 62 62 0 0 1 918 388 V 560 Z" fill="url(#ix5stone)"/><path d="M808 560 V 392 A 48 48 0 0 1 904 392 V 560 Z" fill="#08281F"/><path d="M808 560 V 392 A 48 48 0 0 1 904 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="786" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="856" cy="336" r="9" fill="url(#ix5gold)"/><path d="M970 560 V 388 A 62 62 0 0 1 1094 388 V 560 Z" fill="url(#ix5stone)"/><path d="M984 560 V 392 A 48 48 0 0 1 1080 392 V 560 Z" fill="#08281F"/><path d="M984 560 V 392 A 48 48 0 0 1 1080 392 V 560" fill="none" stroke="url(#ix5gold)" stroke-width="4" opacity=".9"/><rect x="962" y="352" width="140" height="16" rx="4" fill="url(#ix5stone)"/><circle cx="1032" cy="336" r="9" fill="url(#ix5gold)"/>
+<g><path d="M180 160 V 206" stroke="#BE9A2E" stroke-width="2.5"/><path d="M164 248 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="180" cy="292" rx="15" ry="9" fill="#FFE9AE"/><circle cx="180" cy="288" r="24" fill="#FFD98A" opacity=".2"/></g><g><path d="M356 160 V 228" stroke="#BE9A2E" stroke-width="2.5"/><path d="M340 270 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="356" cy="314" rx="15" ry="9" fill="#FFE9AE"/><circle cx="356" cy="310" r="24" fill="#FFD98A" opacity=".2"/></g><g><path d="M532 160 V 250" stroke="#BE9A2E" stroke-width="2.5"/><path d="M516 292 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="532" cy="336" rx="15" ry="9" fill="#FFE9AE"/><circle cx="532" cy="332" r="24" fill="#FFD98A" opacity=".2"/></g><g><path d="M708 160 V 206" stroke="#BE9A2E" stroke-width="2.5"/><path d="M692 248 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="708" cy="292" rx="15" ry="9" fill="#FFE9AE"/><circle cx="708" cy="288" r="24" fill="#FFD98A" opacity=".2"/></g><g><path d="M884 160 V 228" stroke="#BE9A2E" stroke-width="2.5"/><path d="M868 270 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="884" cy="314" rx="15" ry="9" fill="#FFE9AE"/><circle cx="884" cy="310" r="24" fill="#FFD98A" opacity=".2"/></g><g><path d="M1060 160 V 250" stroke="#BE9A2E" stroke-width="2.5"/><path d="M1044 292 l 16 -14 l 16 14 l -6 40 l -20 0 Z" fill="#C9A63A"/><ellipse cx="1060" cy="336" rx="15" ry="9" fill="#FFE9AE"/><circle cx="1060" cy="332" r="24" fill="#FFD98A" opacity=".2"/></g>
+<rect x="0" y="556" width="1200" height="119" fill="#E7E1CE"/>
+<rect x="0" y="556" width="1200" height="10" fill="#C4BAA0"/>
+<g opacity=".45" stroke="#B6AB8E" stroke-width="2">
+<path d="M-200 566 L -140 675"/><path d="M-100 566 L -40 675"/><path d="M0 566 L 60 675"/><path d="M100 566 L 160 675"/><path d="M200 566 L 260 675"/><path d="M300 566 L 360 675"/><path d="M400 566 L 460 675"/><path d="M500 566 L 560 675"/><path d="M600 566 L 660 675"/><path d="M700 566 L 760 675"/><path d="M800 566 L 860 675"/><path d="M900 566 L 960 675"/><path d="M1000 566 L 1060 675"/><path d="M1100 566 L 1160 675"/><path d="M1200 566 L 1260 675"/><path d="M1300 566 L 1360 675"/>
+<path d="M-200 675 L -140 566"/><path d="M-100 675 L -40 566"/><path d="M0 675 L 60 566"/><path d="M100 675 L 160 566"/><path d="M200 675 L 260 566"/><path d="M300 675 L 360 566"/><path d="M400 675 L 460 566"/><path d="M500 675 L 560 566"/><path d="M600 675 L 660 566"/><path d="M700 675 L 760 566"/><path d="M800 675 L 860 566"/><path d="M900 675 L 960 566"/><path d="M1000 675 L 1060 566"/><path d="M1100 675 L 1160 566"/><path d="M1200 675 L 1260 566"/><path d="M1300 675 L 1360 566"/>
+<path d="M0 616 H1200"/></g>
+<g opacity=".16"><rect x="90" y="566" width="124" height="70" fill="#0B3B2E"/><rect x="266" y="566" width="124" height="70" fill="#0B3B2E"/><rect x="442" y="566" width="124" height="70" fill="#0B3B2E"/><rect x="618" y="566" width="124" height="70" fill="#0B3B2E"/><rect x="794" y="566" width="124" height="70" fill="#0B3B2E"/><rect x="970" y="566" width="124" height="70" fill="#0B3B2E"/></g><rect x="0" y="0" width="1200" height="675" fill="url(#ix5wm)"/><rect x="0" y="0" width="1200" height="675" filter="url(#ix5gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="1035" y="620" width="148" height="38" rx="19" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.2"/>
+<circle cx="1055" cy="639" r="5.2" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="1068" y="641" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="1171" y="641" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.7" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#0B3B2E"></span><span class="dot" style="background:#BE9A2E"></span><span class="dot" style="background:#EDF1EC"></span></div>
+    <div class="body">
+      <div class="who">شركة خدمات</div>
+      <h2>مسار البركة — حج وعمرة</h2>
+      <p>زمرّدي وذهبي. يصلح لحملة حج، مكتب عمرة، نقل سياحي، أو وكالة سفر.</p>
+      <div class="sig">العنصر المميّز: <b>حاسبة تكلفة فورية</b> حسب الباقة والعدد ونوع الغرفة</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="06-nonprofit.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#0E9AA0,#10303D)"><b>06</b><svg class="ph-svg " viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة الأثر — Sample impact image" shape-rendering="geometricPrecision"><defs><pattern id="ix6wm" width="258" height="146" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="5" y="38" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="7" y="60" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="138" y="110" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="139" y="132" font-family="'Space Grotesk',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="4.3" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix6gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix6sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><linearGradient id="ix6bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E3948"/><stop offset="0.6" stop-color="#12626C"/><stop offset="1" stop-color="#0E9AA0"/></linearGradient><radialGradient id="ix6gl" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".26"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient><linearGradient id="ix6hrt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0697C"/><stop offset="1" stop-color="#C2354C"/></linearGradient></defs><rect width="1200" height="675" fill="url(#ix6bg)"/>
+<rect width="1200" height="675" fill="url(#ix6gl)"/>
+<circle cx="600" cy="330" r="130" fill="none" stroke="#EAF6F7" stroke-opacity="0.20" stroke-width="2"/><circle cx="600" cy="330" r="192" fill="none" stroke="#EAF6F7" stroke-opacity="0.17" stroke-width="2"/><circle cx="600" cy="330" r="254" fill="none" stroke="#EAF6F7" stroke-opacity="0.14" stroke-width="2"/><circle cx="600" cy="330" r="316" fill="none" stroke="#EAF6F7" stroke-opacity="0.11" stroke-width="2"/><circle cx="600" cy="330" r="378" fill="none" stroke="#EAF6F7" stroke-opacity="0.08" stroke-width="2"/>
+<g opacity=".92"><circle cx="600" cy="82" r="13" fill="#D6455D"/><path d="M578 124 a 22 26 0 0 1 44 0 Z" fill="#D6455D"/></g><g opacity=".92"><circle cx="730" cy="105" r="13" fill="#EAF6F7"/><path d="M708 147 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="835" cy="169" r="13" fill="#EAF6F7"/><path d="M813 211 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="892" cy="262" r="13" fill="#D6455D"/><path d="M870 304 a 22 26 0 0 1 44 0 Z" fill="#D6455D"/></g><g opacity=".92"><circle cx="892" cy="366" r="13" fill="#EAF6F7"/><path d="M870 408 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="835" cy="459" r="13" fill="#EAF6F7"/><path d="M813 501 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="730" cy="523" r="13" fill="#D6455D"/><path d="M708 565 a 22 26 0 0 1 44 0 Z" fill="#D6455D"/></g><g opacity=".92"><circle cx="600" cy="546" r="13" fill="#EAF6F7"/><path d="M578 588 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="470" cy="523" r="13" fill="#EAF6F7"/><path d="M448 565 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="365" cy="459" r="13" fill="#D6455D"/><path d="M343 501 a 22 26 0 0 1 44 0 Z" fill="#D6455D"/></g><g opacity=".92"><circle cx="308" cy="366" r="13" fill="#EAF6F7"/><path d="M286 408 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="308" cy="262" r="13" fill="#EAF6F7"/><path d="M286 304 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g><g opacity=".92"><circle cx="365" cy="169" r="13" fill="#D6455D"/><path d="M343 211 a 22 26 0 0 1 44 0 Z" fill="#D6455D"/></g><g opacity=".92"><circle cx="470" cy="105" r="13" fill="#EAF6F7"/><path d="M448 147 a 22 26 0 0 1 44 0 Z" fill="#EAF6F7"/></g>
+<g filter="url(#ix6sh)">
+<path d="M600 470 C 470 380, 424 316, 434 258 C 444 200, 522 182, 566 224 L 600 258 L 634 224 C 678 182, 756 200, 766 258 C 776 316, 730 380, 600 470 Z" fill="url(#ix6hrt)"/>
+<path d="M492 232 c 34 -14 62 4 72 22" stroke="#FFFFFF" stroke-width="12" fill="none" opacity=".4" stroke-linecap="round"/></g>
+<g fill="#EAF6F7" opacity=".95">
+<circle cx="600" cy="318" r="30" fill="#0E3948" opacity=".28"/>
+<path d="M584 318 l 12 14 l 22 -30" stroke="#FFFFFF" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g opacity=".5"><circle cx="80" cy="610" r="4" fill="#EAF6F7"/><circle cx="198" cy="626" r="5" fill="#EAF6F7"/><circle cx="316" cy="642" r="6" fill="#EAF6F7"/><circle cx="434" cy="610" r="4" fill="#EAF6F7"/><circle cx="552" cy="626" r="5" fill="#EAF6F7"/><circle cx="670" cy="642" r="6" fill="#EAF6F7"/><circle cx="788" cy="610" r="4" fill="#EAF6F7"/><circle cx="906" cy="626" r="5" fill="#EAF6F7"/><circle cx="1024" cy="642" r="6" fill="#EAF6F7"/><circle cx="1142" cy="610" r="4" fill="#EAF6F7"/></g><rect x="0" y="0" width="1200" height="675" fill="url(#ix6wm)"/><rect x="0" y="0" width="1200" height="675" filter="url(#ix6gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="1035" y="620" width="148" height="38" rx="19" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.2"/>
+<circle cx="1055" cy="639" r="5.2" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="1068" y="641" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="14" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="1171" y="641" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.7" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#0E9AA0"></span><span class="dot" style="background:#D6455D"></span><span class="dot" style="background:#EEF3F5"></span></div>
+    <div class="body">
+      <div class="who">منظمة غير ربحية</div>
+      <h2>جمعية أثر — جمعية خيرية</h2>
+      <p>بترولي وفيروزي. يصلح لجمعية، مؤسسة وقفية، مبادرة تطوعية، أو ناد اجتماعي.</p>
+      <div class="sig">العنصر المميّز: <b>محوّل التبرع</b> — يحوّل المبلغ إلى أثر ملموس لحظياً</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+</div>
+
+<div class="wrap">
+  <div class="secdiv">
+    <div class="kick">PERSONAL PROFILES</div>
+    <h2>ثمانية حسابات شخصية — أربعة شباب وأربع بنات</h2>
+    <p>بورتفوليو شخصي لكل مهنة، بصور ورسوم مختومة بعلامة «نموذج». كل نموذج له هوية لونية وخط لاتيني مختلف، وعنصر تفاعلي واحد مميّز يُرسل نتيجته على واتساب.</p>
+  </div>
+</div>
+
+<div class="wrap grid">
+  <a class="tpl" href="07-photographer.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#3B3F46,#14171B)"><b>07</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix07wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix07gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix07sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix07bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#3B3F46"/><stop offset="1" stop-color="#14171B"/></radialGradient><linearGradient id="ix07sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C49C"/><stop offset="1" stop-color="#C4966A"/></linearGradient><linearGradient id="ix07cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2E34"/><stop offset="1" stop-color="#161A1F"/></linearGradient><linearGradient id="ix07hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2420"/><stop offset="1" stop-color="#12100E"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix07bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#E9A94F"/><circle cx="556" cy="222" r="4.5" fill="#E9A94F"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#C4966A"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix07cl)" filter="url(#ix07sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#14171B" opacity=".45"/>
+<ellipse cx="320" cy="292" rx="92" ry="108" fill="url(#ix07sk)"/><path d="M248 296 C 248 358, 280 392, 320 392 C 360 392, 392 358, 392 296 C 388 344, 362 368, 320 368 C 278 368, 252 344, 248 296 Z" fill="#12100E" opacity=".92"/><path d="M320 150 C 400 150, 424 206, 420 260 C 418 288, 414 302, 410 314 C 404 272, 386 246, 356 238 C 330 256, 290 254, 258 238 C 234 250, 222 278, 218 314 C 214 302, 210 288, 208 260 C 204 206, 240 150, 320 150 Z" fill="url(#ix07hd)"/>
+
+<path d="M256 600 C 216 566, 208 512, 222 462" stroke="#3A2F26" stroke-width="15" fill="none"/>
+<path d="M384 600 C 424 566, 432 512, 418 462" stroke="#3A2F26" stroke-width="15" fill="none"/>
+<g filter="url(#ix07sh)"><rect x="238" y="596" width="164" height="106" rx="16" fill="#23262B"/>
+<rect x="264" y="578" width="60" height="24" rx="8" fill="#1A1D21"/>
+<circle cx="320" cy="648" r="46" fill="#33383F"/><circle cx="320" cy="648" r="34" fill="#12151A"/>
+<circle cx="320" cy="648" r="20" fill="#E9A94F" opacity=".75"/><circle cx="308" cy="636" r="7" fill="#FFFFFF" opacity=".5"/>
+<rect x="370" y="612" width="22" height="14" rx="4" fill="#E9A94F"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix07wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix07gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#E9A94F"></span><span class="dot" style="background:#2E5F6B"></span><span class="dot" style="background:#EDEFF2"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — مصوّر</div>
+      <h2>عمّار الزهراني — مصوّر فوتوغرافي</h2>
+      <p>رمادي فحمي وكهرماني. يصلح لمصوّر، مخرج، مونتير، أو أي عمل بصري حر.</p>
+      <div class="sig">العنصر المميّز: <b>عارض صور بشاشة كاملة</b> مع فلاتر تصنيف وتنقّل بالأسهم</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="08-developer.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#2F4C7A,#111C31)"><b>08</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix08wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix08gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix08sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix08bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#2F4C7A"/><stop offset="1" stop-color="#111C31"/></radialGradient><linearGradient id="ix08sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2D3B2"/><stop offset="1" stop-color="#D9AF87"/></linearGradient><linearGradient id="ix08cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F1EA"/><stop offset="1" stop-color="#D2CCBE"/></linearGradient><linearGradient id="ix08hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F4ED"/><stop offset="1" stop-color="#D5CFC0"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix08bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#7AA2F7"/><circle cx="556" cy="222" r="4.5" fill="#7AA2F7"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#D9AF87"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix08cl)" filter="url(#ix08sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#111C31" opacity=".45"/>
+<path d="M320 146 C 404 146, 430 208, 426 266 C 422 316, 432 356, 442 412 C 400 442, 240 442, 198 412 C 208 356, 218 316, 214 266 C 210 208, 236 146, 320 146 Z" fill="url(#ix08hd)"/><g fill="#16171B"><rect x="236" y="176" width="168" height="16" rx="8"/><rect x="240" y="198" width="160" height="13" rx="6.5"/></g><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix08sk)"/>
+<g fill="none" stroke="#7AA2F7" stroke-width="7" opacity=".95"><rect x="258" y="262" width="52" height="40" rx="12"/><rect x="330" y="262" width="52" height="40" rx="12"/><path d="M310 280 h20"/><path d="M258 276 l -22 -8"/><path d="M382 276 l 22 -8"/></g>
+<path d="M196 306 C 196 216, 252 168, 320 168 C 388 168, 444 216, 444 306" fill="none" stroke="#23262B" stroke-width="20" stroke-linecap="round"/>
+<rect x="174" y="284" width="44" height="78" rx="18" fill="#2C3037"/><rect x="422" y="284" width="44" height="78" rx="18" fill="#2C3037"/>
+<rect x="184" y="298" width="24" height="50" rx="12" fill="#7AA2F7"/><rect x="432" y="298" width="24" height="50" rx="12" fill="#7AA2F7"/><rect x="0" y="0" width="640" height="800" fill="url(#ix08wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix08gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#7AA2F7"></span><span class="dot" style="background:#0F1620"></span><span class="dot" style="background:#EDEFF2"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — مطوّر</div>
+      <h2>فيصل العُمري — مهندس برمجيات</h2>
+      <p>أزرق تقني بخط Mono. يصلح لمطوّر، مهندس بيانات، أو مختص أمن سيبراني.</p>
+      <div class="sig">العنصر المميّز: <b>نافذة طرفية تكتب ذاتياً</b> + تبويب مشاريع بمؤشرات أداء</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="09-fitness-coach.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#3A2418,#150D08)"><b>09</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix09wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix09gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix09sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix09bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#3A2418"/><stop offset="1" stop-color="#150D08"/></radialGradient><linearGradient id="ix09sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDB68C"/><stop offset="1" stop-color="#B98A5E"/></linearGradient><linearGradient id="ix09cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22262B"/><stop offset="1" stop-color="#0F1215"/></linearGradient><linearGradient id="ix09hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241C18"/><stop offset="1" stop-color="#0F0C0A"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix09bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#EF7A2A"/><circle cx="556" cy="222" r="4.5" fill="#EF7A2A"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#B98A5E"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix09cl)" filter="url(#ix09sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#150D08" opacity=".45"/>
+<ellipse cx="320" cy="292" rx="92" ry="108" fill="url(#ix09sk)"/><path d="M248 296 C 248 358, 280 392, 320 392 C 360 392, 392 358, 392 296 C 388 344, 362 368, 320 368 C 278 368, 252 344, 248 296 Z" fill="#0F0C0A" opacity=".92"/><path d="M320 150 C 400 150, 424 206, 420 260 C 418 288, 414 302, 410 314 C 404 272, 386 246, 356 238 C 330 256, 290 254, 258 238 C 234 250, 222 278, 218 314 C 214 302, 210 288, 208 260 C 204 206, 240 150, 320 150 Z" fill="url(#ix09hd)"/>
+
+<path d="M250 460 C 276 596, 364 596, 390 460" fill="none" stroke="#EF7A2A" stroke-width="8"/>
+<g filter="url(#ix09sh)"><rect x="292" y="618" width="56" height="34" rx="12" fill="#D9DEE3"/><circle cx="352" cy="634" r="16" fill="#B9C1C8"/>
+<circle cx="316" cy="634" r="7" fill="#5C646C"/></g>
+<path d="M448 470 C 490 500, 502 630, 486 750 L 424 750 C 440 640, 434 502, 448 470 Z" fill="#EDEFF2" opacity=".92"/><rect x="0" y="0" width="640" height="800" fill="url(#ix09wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix09gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#EF7A2A"></span><span class="dot" style="background:#15171A"></span><span class="dot" style="background:#EFEFEF"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — مدرّب</div>
+      <h2>خالد المطيري — مدرّب لياقة</h2>
+      <p>أسود وبرتقالي بخط Bebas. يصلح لمدرّب، أخصائي تغذية، أو مالك ستوديو رياضي.</p>
+      <div class="sig">العنصر المميّز: <b>حاسبة سعرات وماكروز</b> ترسل نتيجتك مباشرة على واتساب</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="10-podcast.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#4A2E5E,#180F22)"><b>10</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix10wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix10gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix10sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix10bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#4A2E5E"/><stop offset="1" stop-color="#180F22"/></radialGradient><linearGradient id="ix10sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C49C"/><stop offset="1" stop-color="#C4966A"/></linearGradient><linearGradient id="ix10cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2EFE6"/><stop offset="1" stop-color="#CFC9B8"/></linearGradient><linearGradient id="ix10hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F4ED"/><stop offset="1" stop-color="#D5CFC0"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix10bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#C86BE0"/><circle cx="556" cy="222" r="4.5" fill="#C86BE0"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#C4966A"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix10cl)" filter="url(#ix10sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#180F22" opacity=".45"/>
+<path d="M320 146 C 404 146, 430 208, 426 266 C 422 316, 432 356, 442 412 C 400 442, 240 442, 198 412 C 208 356, 218 316, 214 266 C 210 208, 236 146, 320 146 Z" fill="url(#ix10hd)"/><g fill="#16171B"><rect x="236" y="176" width="168" height="16" rx="8"/><rect x="240" y="198" width="160" height="13" rx="6.5"/></g><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix10sk)"/>
+
+<g filter="url(#ix10sh)"><rect x="288" y="556" width="64" height="120" rx="32" fill="#2A2E34"/>
+<g stroke="#565D66" stroke-width="4"><path d="M294 576 h52"/><path d="M294 593 h52"/><path d="M294 610 h52"/><path d="M294 627 h52"/><path d="M294 644 h52"/><path d="M294 661 h52"/></g>
+<rect x="308" y="676" width="24" height="30" fill="#22262B"/><rect x="272" y="702" width="96" height="18" rx="8" fill="#C86BE0"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix10wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix10gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#C86BE0"></span><span class="dot" style="background:#E8B23A"></span><span class="dot" style="background:#F2EFE6"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — صانع محتوى</div>
+      <h2>سلطان القحطاني — مقدّم بودكاست</h2>
+      <p>بنفسجي وذهبي. يصلح لبودكاست، قناة يوتيوب، أو أي منصة محتوى صوتي.</p>
+      <div class="sig">العنصر المميّز: <b>مشغّل حلقات بموجة صوتية</b> وشريط تقدّم قابل للسحب</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="11-brand-designer.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#E4A08C,#7A2B1C)"><b>11</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix11wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix11gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix11sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix11bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#E4A08C"/><stop offset="1" stop-color="#7A2B1C"/></radialGradient><linearGradient id="ix11sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DCC0"/><stop offset="1" stop-color="#DEB994"/></linearGradient><linearGradient id="ix11cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F2EA"/><stop offset="1" stop-color="#D9D2C4"/></linearGradient><linearGradient id="ix11hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F4858"/><stop offset="1" stop-color="#16242E"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix11bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#E85D3D"/><circle cx="556" cy="222" r="4.5" fill="#E85D3D"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#DEB994"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix11cl)" filter="url(#ix11sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#7A2B1C" opacity=".45"/>
+<path d="M320 140 C 408 140, 436 204, 432 268 C 428 320, 442 362, 458 434 C 410 466, 230 466, 182 434 C 198 362, 212 320, 208 268 C 204 204, 232 140, 320 140 Z" fill="url(#ix11hd)"/><path d="M320 174 C 374 174, 400 214, 398 254 C 386 218, 358 194, 320 194 C 282 194, 254 218, 242 254 C 240 214, 266 174, 320 174 Z" fill="#FFFFFF" opacity=".12"/><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix11sk)"/>
+<g fill="none" stroke="#E85D3D" stroke-width="7" opacity=".95"><rect x="258" y="262" width="52" height="40" rx="12"/><rect x="330" y="262" width="52" height="40" rx="12"/><path d="M310 280 h20"/><path d="M258 276 l -22 -8"/><path d="M382 276 l 22 -8"/></g>
+<g filter="url(#ix11sh)"><rect x="206" y="596" width="228" height="140" rx="10" fill="#2A2E34"/>
+<rect x="220" y="610" width="200" height="112" rx="6" fill="#10141A"/>
+<g stroke="#E85D3D" stroke-width="5" opacity=".9"><path d="M238 632 h60"/><path d="M238 654 h106"/><path d="M238 676 h152"/><path d="M238 698 h60"/></g>
+<rect x="180" y="736" width="280" height="16" rx="8" fill="#3A3F46"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix11wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix11gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#D9502F"></span><span class="dot" style="background:#2F4858"></span><span class="dot" style="background:#FBF7F1"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — مصمّمة</div>
+      <h2>رغد الشهري — مصمّمة هوية بصرية</h2>
+      <p>طوبي وكريمي. يصلح لمصمّمة جرافيك، مصمّمة داخلي، أو استوديو تصميم.</p>
+      <div class="sig">العنصر المميّز: <b>منزلق قبل/بعد للهوية</b> + مولّد لوحة ألوان بنسخ الأكواد</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="12-english-teacher.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#3A7D8C,#12333B)"><b>12</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix12wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix12gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix12sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix12bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#3A7D8C"/><stop offset="1" stop-color="#12333B"/></radialGradient><linearGradient id="ix12sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2D3B2"/><stop offset="1" stop-color="#D9AF87"/></linearGradient><linearGradient id="ix12cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F2EA"/><stop offset="1" stop-color="#D6D0C2"/></linearGradient><linearGradient id="ix12hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8B23A"/><stop offset="1" stop-color="#9B6E14"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix12bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#E8B23A"/><circle cx="556" cy="222" r="4.5" fill="#E8B23A"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#D9AF87"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix12cl)" filter="url(#ix12sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#12333B" opacity=".45"/>
+<path d="M320 140 C 408 140, 436 204, 432 268 C 428 320, 442 362, 458 434 C 410 466, 230 466, 182 434 C 198 362, 212 320, 208 268 C 204 204, 232 140, 320 140 Z" fill="url(#ix12hd)"/><path d="M320 174 C 374 174, 400 214, 398 254 C 386 218, 358 194, 320 194 C 282 194, 254 218, 242 254 C 240 214, 266 174, 320 174 Z" fill="#FFFFFF" opacity=".12"/><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix12sk)"/>
+
+<g filter="url(#ix12sh)"><rect x="212" y="606" width="216" height="132" rx="10" fill="#E8B23A"/>
+<rect x="228" y="596" width="184" height="132" rx="8" fill="#F6F2E8"/>
+<g stroke="#C9C2B2" stroke-width="5"><path d="M250 624 h140"/><path d="M250 646 h140"/><path d="M250 668 h140"/><path d="M250 690 h140"/><path d="M250 712 h140"/></g>
+<path d="M320 596 v132" stroke="#DED7C6" stroke-width="5"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix12wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix12gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#2A7F8E"></span><span class="dot" style="background:#E8B23A"></span><span class="dot" style="background:#F4F8F8"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — معلّمة</div>
+      <h2>نوف الحربي — معلّمة لغة إنجليزية</h2>
+      <p>فيروزي وذهبي. يصلح لمعلّمة، مدرّبة، أو مركز تدريب صغير.</p>
+      <div class="sig">العنصر المميّز: <b>اختبار تحديد مستوى تفاعلي</b> بخمس أسئلة ونتيجة فورية</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="13-artist.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#C9A05A,#513412)"><b>13</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix13wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix13gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix13sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix13bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#C9A05A"/><stop offset="1" stop-color="#513412"/></radialGradient><linearGradient id="ix13sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6DCC0"/><stop offset="1" stop-color="#DEB994"/></linearGradient><linearGradient id="ix13cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE7D4"/><stop offset="1" stop-color="#CDC2A8"/></linearGradient><linearGradient id="ix13hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B03A3A"/><stop offset="1" stop-color="#5E1A1A"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix13bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#3F6E5A"/><circle cx="556" cy="222" r="4.5" fill="#3F6E5A"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#DEB994"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix13cl)" filter="url(#ix13sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#513412" opacity=".45"/>
+<path d="M320 140 C 408 140, 436 204, 432 268 C 428 320, 442 362, 458 434 C 410 466, 230 466, 182 434 C 198 362, 212 320, 208 268 C 204 204, 232 140, 320 140 Z" fill="url(#ix13hd)"/><path d="M320 174 C 374 174, 400 214, 398 254 C 386 218, 358 194, 320 194 C 282 194, 254 218, 242 254 C 240 214, 266 174, 320 174 Z" fill="#FFFFFF" opacity=".12"/><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix13sk)"/>
+
+<path d="M186 624 a 88 58 0 0 1 176 0 a 88 58 0 0 1 -176 0 Z" fill="#E8E1D2" filter="url(#ix13sh)"/>
+<circle cx="248" cy="610" r="16" fill="#3F6E5A"/><circle cx="296" cy="600" r="14" fill="#3E8F6E"/><circle cx="212" cy="638" r="13" fill="#D6455D"/>
+<g filter="url(#ix13sh)" transform="rotate(-24 430 600)">
+<rect x="416" y="486" width="26" height="146" rx="8" fill="#8A5A2E"/>
+<rect x="414" y="628" width="30" height="26" rx="5" fill="#C0C6CC"/>
+<path d="M416 654 l 26 0 l -8 52 l -10 0 Z" fill="#3F6E5A"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix13wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix13gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#A63A32"></span><span class="dot" style="background:#3F6E5A"></span><span class="dot" style="background:#F8F4EA"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — فنانة</div>
+      <h2>لمى بن سعيد — فنانة تشكيلية وخطّاطة</h2>
+      <p>رملي وقرميدي بخط Playfair. يصلح لفنانة، خطّاط، أو صانع حرفي.</p>
+      <div class="sig">العنصر المميّز: <b>حاسبة تسعير عمل مخصص</b> حسب النوع والمقاس والإطار</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+  <a class="tpl" href="14-writer.html">
+    <div class="swatch" style="background:linear-gradient(150deg,#42526B,#141B26)"><b>14</b><svg class="ph-svg " viewBox="0 0 640 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="نموذج صورة شخصية — Sample portrait" shape-rendering="geometricPrecision"><defs><pattern id="ix14wm" width="216" height="122" patternUnits="userSpaceOnUse" patternTransform="rotate(-26)">
+<text x="4" y="32" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="6" y="50" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+<text x="115" y="92" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" fill-opacity=".155">نموذج</text>
+<text x="117" y="111" font-family="'Space Grotesk',system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="3.6" fill="#FFFFFF" fill-opacity=".11">SAMPLE</text>
+</pattern><filter id="ix14gr" x="0%" y="0%" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="7" result="n"/>
+<feColorMatrix in="n" type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer>
+</filter><filter id="ix14sh" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04070A" flood-opacity=".32"/>
+</filter><radialGradient id="ix14bg" cx="50%" cy="32%" r="82%"><stop offset="0" stop-color="#42526B"/><stop offset="1" stop-color="#141B26"/></radialGradient><linearGradient id="ix14sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C49C"/><stop offset="1" stop-color="#C4966A"/></linearGradient><linearGradient id="ix14cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE6D6"/><stop offset="1" stop-color="#CBC2AE"/></linearGradient><linearGradient id="ix14hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F2B3A"/><stop offset="1" stop-color="#0C1420"/></linearGradient></defs><rect width="640" height="800" fill="url(#ix14bg)"/>
+<circle cx="320" cy="330" r="240" fill="#FFFFFF" opacity=".06"/>
+<circle cx="320" cy="330" r="176" fill="#FFFFFF" opacity=".05"/>
+<g opacity=".5"><circle cx="94" cy="150" r="6" fill="#B08B3A"/><circle cx="556" cy="222" r="4.5" fill="#B08B3A"/>
+<circle cx="520" cy="112" r="8" fill="#FFFFFF" fill-opacity=".35"/></g>
+<rect x="286" y="344" width="68" height="150" rx="30" fill="#C4966A"/>
+<path d="M84 800 C 84 596, 194 432, 320 432 C 446 432, 556 596, 556 800 Z" fill="url(#ix14cl)" filter="url(#ix14sh)"/>
+<path d="M278 438 L 320 534 L 362 438 C 344 458, 296 458, 278 438 Z" fill="#141B26" opacity=".45"/>
+<path d="M320 140 C 408 140, 436 204, 432 268 C 428 320, 442 362, 458 434 C 410 466, 230 466, 182 434 C 198 362, 212 320, 208 268 C 204 204, 232 140, 320 140 Z" fill="url(#ix14hd)"/><path d="M320 174 C 374 174, 400 214, 398 254 C 386 218, 358 194, 320 194 C 282 194, 254 218, 242 254 C 240 214, 266 174, 320 174 Z" fill="#FFFFFF" opacity=".12"/><ellipse cx="320" cy="292" rx="78" ry="92" fill="url(#ix14sk)"/>
+<g fill="none" stroke="#B08B3A" stroke-width="7" opacity=".95"><rect x="258" y="262" width="52" height="40" rx="12"/><rect x="330" y="262" width="52" height="40" rx="12"/><path d="M310 280 h20"/><path d="M258 276 l -22 -8"/><path d="M382 276 l 22 -8"/></g>
+<g filter="url(#ix14sh)"><rect x="222" y="596" width="200" height="146" rx="12" fill="#F7F4EC"/>
+<rect x="222" y="596" width="26" height="146" rx="12" fill="#B08B3A"/>
+<g stroke="#CFC8B8" stroke-width="5"><path d="M270 626 h124"/><path d="M270 650 h124"/><path d="M270 674 h124"/><path d="M270 698 h124"/><path d="M270 722 h124"/></g></g>
+<g transform="rotate(28 460 620)"><rect x="450" y="540" width="18" height="120" rx="6" fill="#B08B3A"/>
+<path d="M450 660 l 9 24 l 9 -24 Z" fill="#2A2118"/></g><rect x="0" y="0" width="640" height="800" fill="url(#ix14wm)"/><rect x="0" y="0" width="640" height="800" filter="url(#ix14gr)" style="mix-blend-mode:overlay" opacity=".5"/><g>
+<rect x="502" y="754" width="124" height="32" rx="16" fill="rgba(9,14,20,.62)" stroke="rgba(255,255,255,.34)" stroke-width="1.0"/>
+<circle cx="518" cy="770" r="4.3" fill="#FF5A5A" fill-opacity=".9"/>
+<text x="530" y="771" font-family="Cairo,'Segoe UI',system-ui,sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" dominant-baseline="middle">نموذج</text>
+<text x="616" y="771" text-anchor="end" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#FFFFFF" fill-opacity=".72" dominant-baseline="middle">SAMPLE</text>
+</g></svg>
+      <span class="dot" style="background:#9A7420"></span><span class="dot" style="background:#2F4858"></span><span class="dot" style="background:#F7F6F2"></span></div>
+    <div class="body">
+      <div class="who">حساب شخصي — كاتبة</div>
+      <h2>أمل الغامدي — كاتبة محتوى وصحفية</h2>
+      <p>حبري وذهبي بخط DM Serif. يصلح لكاتبة، صحفي، مترجم، أو مستشار.</p>
+      <div class="sig">العنصر المميّز: <b>أرشيف مقالات بفلاتر</b> + حاسبة تسعير بعدد الكلمات</div>
+      <span class="open">معاينة النموذج</span>
+    </div>
+  </a>
+
+</div>
+
+<div class="wrap">
+  <div class="note">
+    <h3>كيف تُخصّص أي نموذج لعميل</h3>
+    <ol>
+      <li>افتح الملف بـ Visual Studio Code، وابحث عن <code>CONFIG</code> في آخر الصفحة — غيّر رقم الواتساب واسم النشاط.</li>
+      <li>الألوان كلها في <code>:root</code> أعلى الـ CSS. غيّر ٣ إلى ٥ متغيّرات فقط وستحصل على هوية مختلفة كلياً.</li>
+      <li>النصوص مزدوجة اللغة عبر <code>data-ar</code> و<code>data-en</code> على نفس العنصر — عدّل الاثنين معاً حتى لا ينكسر التبديل.</li>
+      <li>استبدل المربعات الرمادية بصور العميل: ضع <code>&lt;img&gt;</code> مكان النص التوضيحي داخلها.</li>
+      <li>كل صورة في النماذج رسم متجهي <code>SVG</code> مدمج داخل الملف نفسه — يظهر بأي دقة بلا تحبّب، ولا يحتاج أي ملف خارجي.</li>
+      <li>الصور مختومة بعلامة «نموذج». لإزالتها ابحث في الملف عن <code>url(#</code> متبوعاً بـ <code>wm</code>، واحذف سطر <code>&lt;rect ... fill="url(#…wm)"&gt;</code> ومجموعة الشارة أسفل كل <code>&lt;svg&gt;</code> — أو ببساطة استبدل الـ <code>&lt;svg&gt;</code> كاملاً بصورة العميل.</li>
+      <li>الخطوط تُحمَّل من Google Fonts. للعمل بدون إنترنت، نزّل الخط وأدرجه محلياً بـ <code>@font-face</code>.</li>
+    </ol>
+  </div>
+</div>
+
+<footer><div class="wrap">استبدل هذه الصفحة بمعرض أعمالك الخاص قبل إرسال الرابط لأي عميل.</div></footer>
+
+<script>
+function tt(){const h=document.documentElement,n=h.dataset.theme==='dark'?'light':'dark';h.dataset.theme=n;document.getElementById('ti').textContent=n==='dark'?'☀':'🌙';try{localStorage.setItem('gt',n)}catch(e){}}
+try{const s=localStorage.getItem('gt');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}
+</script>
+</body>
+</html>
