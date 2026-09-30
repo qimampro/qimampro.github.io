@@ -11,20 +11,21 @@
 <meta name="theme-color" content="#0F2340">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Abdallah Atef · Portfolio">
-<meta property="og:title" content="Eng. Abdallah Atef · Architectural Site Engineer">
+<meta property="og:title" content="Eng. Abdallah Atef · م. عبدالله عاطف — Architectural Site Engineer">
 <meta property="og:description" content="Site execution, fit-out, QA/QC and technical office · Makkah, Saudi Arabia · مهندس معماري موقع ومكتب فني">
 <meta property="og:url" content="https://qimampro.github.io/abdallah-atef/">
-<meta property="og:image" content="https://qimampro.github.io/abdallah-atef/og.jpg">
-<meta property="og:image:secure_url" content="https://qimampro.github.io/abdallah-atef/og.jpg">
+<meta property="og:image" content="https://qimampro.github.io/abdallah-atef/og.jpg?v=4">
+<meta property="og:image:secure_url" content="https://qimampro.github.io/abdallah-atef/og.jpg?v=4">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:description" content="Site execution, fit-out, QA/QC and technical office · Makkah, Saudi Arabia">
 <meta property="og:image:alt" content="Eng. Abdallah Atef, Architectural Site Engineer">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_SA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Eng. Abdallah Atef · Architectural Site Engineer">
-<meta name="twitter:image" content="https://qimampro.github.io/abdallah-atef/og.jpg">
+<meta name="twitter:image" content="https://qimampro.github.io/abdallah-atef/og.jpg?v=4">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -242,7 +243,7 @@ section{padding-block:clamp(72px,10vw,120px);position:relative}
 .proj:hover .plate svg.bp{transform:scale(1.08);opacity:.62}
 .proj .plate .fig{position:absolute;inset-inline-start:22px;bottom:18px}
 .proj .plate .fig b{display:block;font-family:var(--f-display);font-weight:400;font-size:38px;line-height:1.05;color:var(--gold-hi)}
-.proj .plate .fig span{font-family:var(--f-mono);font-size:10px;letter-spacing:var(--ls);text-transform:var(--tt);color:var(--on-navy-soft)}
+.proj .plate .fig>span{font-family:var(--f-mono);font-size:10px;letter-spacing:var(--ls);text-transform:var(--tt);color:var(--on-navy-soft)}
 .proj .plate .no{position:absolute;inset-inline-end:18px;top:16px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--on-navy-soft)}
 .proj .info{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
 .proj h3{font-size:25px}
@@ -452,8 +453,8 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.7,.2,1)}
 .composer input:focus,.composer textarea:focus{outline:none;border-color:var(--gold)}
 .composer .btn{justify-self:start}
 .qr{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:22px;padding-top:22px;border-top:1px solid var(--gold-line)}
-.qr .code{background:#fff;padding:8px;width:148px;height:148px;display:grid;place-items:center}
-.qr .code img,.qr .code canvas{width:132px!important;height:132px!important}
+.qr .code{background:#fff;padding:8px;width:176px;height:176px;display:grid;place-items:center}
+.qr .code img,.qr .code canvas{width:160px!important;height:160px!important}
 .qr p{color:var(--on-navy-soft);font-size:14px}
 .qr p b{display:block;color:var(--on-navy);font-weight:500;font-size:15px;margin-bottom:4px}
 @media (max-width:860px){.c-grid{grid-template-columns:1fr}}
@@ -526,7 +527,7 @@ dialog{border-radius:var(--r-lg);overflow:hidden}
 .card .who img{border-radius:50%}
 .composer input,.composer textarea{border-radius:var(--r-sm)}
 .qr .code{border-radius:var(--r)}
-.qr .code img{width:132px;height:132px;image-rendering:pixelated}
+.qr .code img{width:160px;height:160px;image-rendering:auto}
 .cv-pages img{border-radius:var(--r-sm)}
 
 .totop{border-radius:50%}
@@ -567,6 +568,20 @@ dialog{border-radius:var(--r-lg);overflow:hidden}
   .reg td>.sp{justify-self:start}
 }
 
+
+/* project photos */
+.proj .plate{height:190px}
+.proj .plate .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.proj .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,35,64,.15) 0%,rgba(15,35,64,.35) 45%,rgba(10,24,46,.92) 100%);pointer-events:none}
+.proj .plate .fig,.proj .plate .no{z-index:2}
+.proj .plate svg.bp{z-index:1;opacity:.22}
+.proj:hover .plate .pimg{transform:scale(1.07);opacity:.8}
+.proj:hover .plate svg.bp{opacity:.35}
+#projDlg .dlg-head{min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
+.dlg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+#projDlg .dlg-head::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,35,64,.2),rgba(10,24,46,.9));pointer-events:none}
+#projDlg .dlg-head>div,#projDlg .dlg-head .x{z-index:2}
+.pnote{margin-top:18px;font-size:13px;color:var(--ink-soft);text-align:center}
 /* v4: polish & fixes */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-ico .sun{display:none}:root:not([data-theme="light"]) .theme-ico .moon{display:block}}
 html:has(dialog[open]){overflow:hidden}
@@ -888,6 +903,7 @@ html:has(dialog[open]){overflow:hidden}
       <button class="chip" data-f="reno" aria-pressed="false"><span class="en">Renovation &amp; Fit-out</span><span class="ar">ترميم وتشطيبات</span></button>
     </div>
     <div class="proj-grid" id="projGrid"></div>
+    <p class="pnote"><span class="en">Card images come from the site photo record and are indicative of the work type.</span><span class="ar">صور البطاقات من سجل صور الموقع وهي توضيحية لنوع العمل.</span></p>
   </div>
 </section>
 
@@ -1067,8 +1083,8 @@ html:has(dialog[open]){overflow:hidden}
         <a class="btn btn-line" href="https://wa.me/966549608263" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="en">WhatsApp</span><span class="ar">واتساب</span></a>
       </div>
       <div class="qr">
-        <div class="code"><img src="img/qr-contact.png" width="132" height="132" alt="QR code: save Abdallah Atef contact"></div>
-        <p><b class="en">Scan to save contact</b><b class="ar">امسح لحفظ جهة الاتصال</b><span class="en">Point a phone camera at the code to add Abdallah's name, number, email and LinkedIn to contacts.</span><span class="ar">وجّه كاميرا الجوال إلى الرمز لإضافة الاسم والرقم والبريد ولينكدإن إلى جهات الاتصال.</span></p>
+        <div class="code"><img src="img/qr-contact.png" width="160" height="160" alt="QR code: save Abdallah Atef contact"></div>
+        <p><b class="en">Scan to save contact</b><b class="ar">امسح لحفظ جهة الاتصال</b><span class="en">Point a phone camera at the code to add Abdallah's name, number, email and portfolio link to contacts.</span><span class="ar">وجّه كاميرا الجوال إلى الرمز لإضافة الاسم والرقم والبريد ورابط الموقع إلى جهات الاتصال.</span></p>
       </div>
     </div>
   </div>
@@ -1093,7 +1109,7 @@ html:has(dialog[open]){overflow:hidden}
 <div id="printCv"><img data-p="1" alt=""><img data-p="2" alt=""></div>
 
 <dialog id="projDlg" aria-labelledby="dlgTitle">
-  <div class="dlg-head"><svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" aria-hidden="true"><use href="#bp"/></svg>
+  <div class="dlg-head"><img id="dlgImg" class="dlg-img" alt="" sizes="min(760px,100vw)"><svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" aria-hidden="true"><use href="#bp"/></svg>
     <div style="position:relative"><p class="mono" id="dlgNo"></p><h3 id="dlgTitle"></h3></div>
     <button class="x" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
   <div class="dlg-body"><table class="dlg-table"><tbody id="dlgRows"></tbody></table>
@@ -1133,17 +1149,18 @@ const P=[
  {n:["Abeer Paradise Compound","كمبوند عبير بارادايس"],loc:["Minya, Egypt","المنيا، مصر"],y:"2018 – 2022",fig:["Façade","واجهات"],u:["& landscape","وتنسيق مواقع"],c:["res","reno"],type:["Residential compound","مجمع سكني"],scope:["Façade and interior finishing for residential buildings and units, plus landscaping.","تشطيب الواجهات والداخل للمباني والوحدات السكنية مع تنسيق المواقع."]}
 ];
 const pad=i=>String(i+1).padStart(2,'0');
+const PIMG=["st_slab", "st_pour", "hero_resort", "pl_central", "pl_structure", "st_excav", "pool_building", "st_rebar", "fit_ceiling", "st_masonry", "fit_corridor", "pl_final"];
 const D={"fit_ceiling":[3621,3840],"fit_corridor":[3527,3840],"fit_mep":[3293,3840],"fit_raised":[2739,3840],"fit_suspended":[2708,3840],"hero_resort":[3331,3840],"pl_central":[3296,3840],"pl_final":[2975,3840],"pl_poolside":[3305,3840],"pl_slide":[3357,3840],"pl_structure":[3375,3840],"pool_building":[2757,3840],"portrait":[2682,3840],"qc_services":[3382,3840],"st_excav":[3840,3789],"st_masonry":[3840,3538],"st_pour":[3840,3187],"st_rebar":[3507,3840],"st_slab":[3840,1809]};
 const SET=n=>`img/${n}-800.webp 800w, img/${n}-1600.webp 1600w, img/${n}.jpg 3840w`;
 const WH=n=>D[n]?`width="${D[n][0]}" height="${D[n][1]}"`:'';
 const grid=document.getElementById('projGrid');
 grid.innerHTML=P.map((p,i)=>`<button class="proj reveal" data-i="${i}" data-c="${p.c.join(' ')}" aria-haspopup="dialog">
-  <div class="plate"><svg class="bp" aria-hidden="true"><use href="#bp"/></svg><span class="no">P-${pad(i)}</span><div class="fig"><b>${t(p.fig[0],p.fig[1])}</b><span>${t(p.u[0],p.u[1])}</span></div></div>
+  <div class="plate"><img class="pimg" src="img/${PIMG[i]}-800.webp" srcset="img/${PIMG[i]}-800.webp 800w, img/${PIMG[i]}-1600.webp 1600w" sizes="(max-width:600px) 92vw, (max-width:980px) 46vw, 380px" alt="" loading="lazy" decoding="async"><svg class="bp" aria-hidden="true"><use href="#bp"/></svg><span class="no">P-${pad(i)}</span><div class="fig"><b>${t(p.fig[0],p.fig[1])}</b><span>${t(p.u[0],p.u[1])}</span></div></div>
   <div class="info"><h3>${t(p.n[0],p.n[1])}</h3><span class="loc"><svg><use href="#i-pin"/></svg>${t(p.loc[0],p.loc[1])}</span><p class="scope">${t(p.scope[0],p.scope[1])}</p>
   <div class="meta"><bdi>${p.y}</bdi><span class="more">${t('Details','التفاصيل')}<svg class="flip"><use href="#i-arrow"/></svg></span></div></div></button>`).join('');
 const dlg=document.getElementById('projDlg');let cur=0;
 function visibleProjects(){return [...grid.querySelectorAll('.proj:not([hidden])')].map(b=>+b.dataset.i)}
-function showProject(i){cur=i;const p=P[i];
+function showProject(i){cur=i;const p=P[i];const di=document.getElementById('dlgImg');di.srcset=`img/${PIMG[i]}-800.webp 800w, img/${PIMG[i]}-1600.webp 1600w, img/${PIMG[i]}.jpg 3840w`;di.src=`img/${PIMG[i]}-1600.webp`;
   document.getElementById('dlgNo').innerHTML=`P-${pad(i)} · <bdi>${p.y}</bdi>`;
   document.getElementById('dlgTitle').innerHTML=t(p.n[0],p.n[1]);
   document.getElementById('dlgRows').innerHTML=[[t('Location','الموقع'),t(p.loc[0],p.loc[1])],[t('Period','الفترة'),`<bdi>${p.y}</bdi>`],[t('Role','الدور'),t('Architectural Engineer','مهندس معماري')],[t('Project type','نوع المشروع'),t(p.type[0],p.type[1])],[t('Scope of work','نطاق العمل'),t(p.scope[0],p.scope[1])],[t('Categories','التصنيف'),p.c.map(c=>t(CAT[c][0],CAT[c][1])).join(' · ')]].map(r=>`<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`).join('');}
