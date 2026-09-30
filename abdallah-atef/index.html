@@ -28,7 +28,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Abdallah Atef Ezzat","alternateName":"عبدالله عاطف","jobTitle":"Architectural Site Engineer & Technical Office Engineer","url":"https://qimampro.github.io/abdallah-atef/","image":"https://qimampro.github.io/abdallah-atef/img/portrait-800.webp","email":"mailto:abdallahezzat95@hotmail.com","telephone":"+966549608263","address":{"@type":"PostalAddress","addressLocality":"Makkah","addressCountry":"SA"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Minia University"},"sameAs":["https://www.linkedin.com/in/abdallah-atef-60054b41b"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Abdallah Atef Ezzat","alternateName":"عبدالله عاطف","jobTitle":"Architectural Site Engineer & Technical Office Engineer","url":"https://qimampro.github.io/abdallah-atef/","image":"https://qimampro.github.io/abdallah-atef/img/portrait-800.webp","email":"mailto:abdallahezzat95@hotmail.com","telephone":"+966549608263","address":{"@type":"PostalAddress","addressLocality":"Makkah","addressCountry":"SA"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Minia University"},"sameAs":["https://www.linkedin.com/in/abdallah-atef-60054b41b"],"logo":"https://qimampro.github.io/abdallah-atef/logo/logo-4k.png"}</script>
 <script>try{var Q=new URLSearchParams(location.search).get('lang'),L=(Q==='ar'||Q==='en')?Q:localStorage.getItem('aa-lang');if(L==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}var T=localStorage.getItem('aa-theme');if(T)document.documentElement.setAttribute('data-theme',T)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +101,7 @@ section{padding-block:clamp(72px,10vw,120px);position:relative}
 .nav.solid{background:rgba(10,24,46,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--gold-line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:18px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy)}
-.brand .mark{width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;font-family:"DM Serif Display",serif;font-size:18px;color:var(--gold-hi)}
+.brand .mark{width:44px;height:44px;border:1px solid var(--gold-line);display:grid;place-items:center;background:rgba(255,255,255,.03)}.brand .mark img{width:34px;height:34px}
 .brand span{font-family:var(--f-mono);font-size:11px;letter-spacing:var(--ls);text-transform:var(--tt);line-height:1.35}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
 .nav ul a{color:#D5DCE8;text-decoration:none;font-size:14px;letter-spacing:.04em;position:relative;padding-block:6px;transition:color .25s}
@@ -580,6 +580,7 @@ html:has(dialog[open]){overflow:hidden}
   .stages-legend .touch{display:inline}
 }
 @media (max-width:600px){footer{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}}
+.f-logo{display:flex;justify-content:center;padding:26px 0 30px}.f-logo img{width:clamp(180px,22vw,240px);height:auto}
 :root[lang="ar"] .job .when{letter-spacing:0;font-family:var(--f-body);font-size:14px}
 @media (max-width:600px){.spec{gap:8px}.spec>span{border:1px solid var(--gold-line);border-radius:999px;padding:5px 12px;font-size:13.5px}.spec span+span::before{display:none}}
 </style>
@@ -695,7 +696,7 @@ html:has(dialog[open]){overflow:hidden}
 <div class="progress" id="progress"></div>
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top"><div class="mark">AA</div><span><span class="en">Abdallah Atef<br>Site Architect</span><span class="ar">م. عبدالله عاطف<br>معماري موقع</span></span></a>
+    <a class="brand" href="#top" aria-label="Abdallah Atef, home"><span class="mark"><img src="logo/mark-solid-gold.svg" width="34" height="34" alt=""></span><span><span class="en">Abdallah Atef<br>Site Architect</span><span class="ar">م. عبدالله عاطف<br>معماري موقع</span></span></a>
     <ul id="menu">
       <li><a href="#about"><span class="en">About</span><span class="ar">نبذة</span></a></li>
       <li><a href="#experience"><span class="en">Experience</span><span class="ar">الخبرات</span></a></li>
@@ -734,7 +735,7 @@ html:has(dialog[open]){overflow:hidden}
       <div class="spec in"><span><span class="en">Site Execution</span><span class="ar">التنفيذ في الموقع</span></span><span><span class="en">Fit-Out</span><span class="ar">التشطيبات الداخلية</span></span><span>QA/QC</span><span><span class="en">Technical Coordination</span><span class="ar">التنسيق الفني</span></span></div>
       <div class="hero-cta in">
         <a class="btn btn-gold" href="#projects"><span class="en">View Projects</span><span class="ar">استعرض المشاريع</span> <svg class="flip"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-line" href="Abdallah_Atef_CV.pdf" download><span class="en">Download CV</span><span class="ar">تحميل السيرة الذاتية</span> <svg><use href="#i-down"/></svg></a>
+        <a class="btn btn-line cv-pdf" href="Abdallah_Atef_CV.pdf" download><span class="en">Download CV</span><span class="ar">تحميل السيرة الذاتية</span> <svg><use href="#i-down"/></svg></a>
       </div>
     </div>
   </div>
@@ -1002,15 +1003,16 @@ html:has(dialog[open]){overflow:hidden}
     </div>
     <div class="desk">
       <button class="cv-stack" id="cvOpen" aria-label="View CV">
-        <img src="img/cv-page-2-800.webp" srcset="img/cv-page-2-800.webp 800w, img/cv-page-2-1600.webp 1600w" sizes="(max-width:860px) 60vw, 340px" width="800" height="1035" alt="" loading="lazy"><img src="img/cv-page-1-800.webp" srcset="img/cv-page-1-800.webp 800w, img/cv-page-1-1600.webp 1600w" sizes="(max-width:860px) 60vw, 340px" width="800" height="1035" alt="" loading="lazy">
+        <img data-cv="2" data-full="0" src="img/cv-page-2-800.webp" srcset="img/cv-page-2-800.webp 800w, img/cv-page-2-1600.webp 1600w" sizes="(max-width:860px) 60vw, 340px" width="800" height="1132" alt="" loading="lazy"><img data-cv="1" data-full="0" src="img/cv-page-1-800.webp" srcset="img/cv-page-1-800.webp 800w, img/cv-page-1-1600.webp 1600w" sizes="(max-width:860px) 60vw, 340px" width="800" height="1132" alt="" loading="lazy">
         <span class="open"><svg><use href="#i-eye"/></svg><span class="en">View CV</span><span class="ar">عرض السيرة</span></span>
       </button>
       <div>
-        <p class="lede en">Two-page CV covering site and technical office experience, 12 selected projects, software and credentials. View it here, download the PDF, or send it on.</p>
-        <p class="lede ar">سيرة ذاتية من صفحتين تشمل خبرات الموقع والمكتب الفني و12 مشروعًا مختارًا والبرامج والمؤهلات. اعرضها هنا أو حمّلها بصيغة PDF أو أرسلها مباشرة.</p>
+        <p class="lede en">Two-page CV in English and Arabic, set in the same identity as this site: site and technical office experience, 12 selected projects, software and credentials.</p>
+        <p class="lede ar">سيرة ذاتية من صفحتين بالعربية والإنجليزية وبنفس هوية الموقع: خبرات الموقع والمكتب الفني و12 مشروعًا مختارًا والبرامج والمؤهلات.</p>
         <div class="actions">
           <button class="act" id="cvOpen2"><svg><use href="#i-eye"/></svg><span><span class="en">View in browser</span><span class="ar">عرض في المتصفح</span><small class="en">Both pages, full size</small><small class="ar">الصفحتان بالحجم الكامل</small></span></button>
-          <a class="act" href="Abdallah_Atef_CV.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Download PDF</span><span class="ar">تحميل PDF</span><small>Abdallah_Atef_CV.pdf</small></span></a>
+          <a class="act cv-pdf" href="Abdallah_Atef_CV.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Download PDF</span><span class="ar">تحميل PDF</span><small class="en">English CV · A4, 2 pages</small><small class="ar">السيرة بالعربية · A4 صفحتان</small></span></a>
+          <a class="act cv-pdf-alt" href="Abdallah_Atef_CV_AR.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Arabic CV</span><span class="ar">النسخة الإنجليزية</span><small class="en">السيرة الذاتية بالعربية</small><small class="ar">English CV</small></span></a>
           <a class="act" id="waShare" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span><span class="en">Share on WhatsApp</span><span class="ar">مشاركة عبر واتساب</span><small class="en">Send the portfolio link</small><small class="ar">إرسال رابط الموقع</small></span></a>
           <button class="act" id="copyLink"><svg><use href="#i-link"/></svg><span><span class="en">Copy portfolio link</span><span class="ar">نسخ رابط الموقع</span><small class="en">Paste into email or LinkedIn</small><small class="ar">للصقه في البريد أو لينكدإن</small></span></button>
           <button class="act" id="printBtn" hidden><svg><use href="#i-print"/></svg><span><span class="en">Print CV</span><span class="ar">طباعة السيرة</span><small class="en">A4, two pages</small><small class="ar">مقاس A4، صفحتان</small></span></button>
@@ -1064,18 +1066,19 @@ html:has(dialog[open]){overflow:hidden}
 
 <footer>
   <div class="wrap">
+    <div class="f-logo"><img src="logo/logo-dark.svg" width="230" height="177" alt="Abdullah Atef — Architecture | Execution | Development" loading="lazy"></div>
     <div class="tb">
       <div>Project<b>Abdallah Atef · Portfolio</b></div>
       <div>Discipline<b>Architecture</b></div>
       <div>Sheets<b>A-01 – A-11</b></div>
-      <div>Rev<b>2026 · 02</b></div>
+      <div>Rev<b>2026 · 03</b></div>
     </div>
   </div>
 </footer>
 <a class="wa-float" href="https://wa.me/966549608263" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg><span class="en">WhatsApp</span><span class="ar">واتساب</span></a>
 <button class="totop" id="toTop" aria-label="Back to top"><svg><use href="#i-arrow"/></svg></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div id="printCv"><img data-src="img/cv-page-1.jpg" alt=""><img data-src="img/cv-page-2.jpg" alt=""></div>
+<div id="printCv"><img data-p="1" alt=""><img data-p="2" alt=""></div>
 
 <dialog id="projDlg" aria-labelledby="dlgTitle">
   <div class="dlg-head"><svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" aria-hidden="true"><use href="#bp"/></svg>
@@ -1091,9 +1094,9 @@ html:has(dialog[open]){overflow:hidden}
 </dialog>
 <dialog id="cvDlg" aria-label="CV">
   <div class="dlg-head"><h3><span class="en">Abdallah Atef · CV</span><span class="ar">السيرة الذاتية · عبدالله عاطف</span></h3>
-    <a class="btn btn-gold" href="Abdallah_Atef_CV.pdf" target="_blank" rel="noopener" style="padding:10px 16px;font-size:12px"><svg><use href="#i-down"/></svg>PDF</a>
+    <a class="btn btn-gold cv-pdf" href="Abdallah_Atef_CV.pdf" download style="padding:10px 16px;font-size:12px"><svg><use href="#i-down"/></svg>PDF</a>
     <button class="x" data-close aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
-  <div class="cv-pages"><img src="img/cv-page-1-1600.webp" srcset="img/cv-page-1-800.webp 800w, img/cv-page-1-1600.webp 1600w, img/cv-page-1.jpg 3840w" sizes="min(860px, 100vw)" width="1600" height="2071" alt="CV page 1" loading="lazy"><img src="img/cv-page-2-1600.webp" srcset="img/cv-page-2-800.webp 800w, img/cv-page-2-1600.webp 1600w, img/cv-page-2.jpg 3840w" sizes="min(860px, 100vw)" width="1600" height="2071" alt="CV page 2" loading="lazy"></div>
+  <div class="cv-pages"><img data-cv="1" data-full="1" src="img/cv-page-1-1600.webp" srcset="img/cv-page-1-800.webp 800w, img/cv-page-1-1600.webp 1600w, img/cv-page-1.jpg 3840w" sizes="min(860px, 100vw)" width="1600" height="2263" alt="CV page 1" loading="lazy"><img data-cv="2" data-full="1" src="img/cv-page-2-1600.webp" srcset="img/cv-page-2-800.webp 800w, img/cv-page-2-1600.webp 1600w, img/cv-page-2.jpg 3840w" sizes="min(860px, 100vw)" width="1600" height="2263" alt="CV page 2" loading="lazy"></div>
 </dialog>
 
 <script>
@@ -1203,7 +1206,11 @@ const C=[["Professional Site Engineer Diploma","دبلوم مهندس الموق
 document.getElementById('courses').innerHTML=C.map(c=>`<div class="course reveal"><svg><use href="#i-cert"/></svg><div><b>${t(c[0],c[1])}</b><small>${t(c[2],c[3])}</small></div></div>`).join('');
 
 /* LANGUAGE + THEME */
-function setLang(l){root.lang=l;root.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('aa-lang',l)}catch(e){};updateLinks()}
+const cvBase=()=>isAr()?'cv-ar-page':'cv-page';
+function updateCv(){const b=cvBase();document.querySelectorAll('img[data-cv]').forEach(im=>{const n=im.dataset.cv,f=im.dataset.full==='1';im.srcset=`img/${b}-${n}-800.webp 800w, img/${b}-${n}-1600.webp 1600w`+(f?`, img/${b}-${n}.jpg 3840w`:'');im.src=`img/${b}-${n}-${f?1600:800}.webp`});
+  const main=isAr()?'Abdallah_Atef_CV_AR.pdf':'Abdallah_Atef_CV.pdf',alt=isAr()?'Abdallah_Atef_CV.pdf':'Abdallah_Atef_CV_AR.pdf';
+  document.querySelectorAll('.cv-pdf').forEach(a=>a.href=main);document.querySelectorAll('.cv-pdf-alt').forEach(a=>a.href=alt);}
+function setLang(l){root.lang=l;root.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('aa-lang',l)}catch(e){};updateLinks();updateCv()}
 if(!root.lang)root.lang='en';
 document.getElementById('langBtn').onclick=()=>setLang(isAr()?'en':'ar');
 document.getElementById('themeBtn').onclick=()=>{const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('aa-theme',n)}catch(e){}};
@@ -1219,7 +1226,7 @@ const siteUrl=()=>location.href.split('#')[0];
 function updateLinks(){
   const msg=isAr()?`ملف أعمال م. عبدالله عاطف – مهندس معماري موقع ومكتب فني: ${siteUrl()}`:`Portfolio of Abdallah Atef – Architectural Site & Technical Office Engineer: ${siteUrl()}`;
   document.getElementById('waShare').href='https://wa.me/?text='+encodeURIComponent(msg);
-  const subj=isAr()?'السيرة الذاتية – م. عبدالله عاطف':'CV – Eng. Abdallah Atef';const cvUrl=new URL('Abdallah_Atef_CV.pdf',siteUrl()).href;
+  const subj=isAr()?'السيرة الذاتية – م. عبدالله عاطف':'CV – Eng. Abdallah Atef';const cvUrl=new URL(isAr()?'Abdallah_Atef_CV_AR.pdf':'Abdallah_Atef_CV.pdf',siteUrl()).href;
   document.getElementById('mailShare').href='mailto:?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(msg+'\n\n'+(isAr()?'السيرة الذاتية (PDF): ':'CV (PDF): ')+cvUrl);composeLink();}
 const ns=document.getElementById('nativeShare');if(navigator.share){ns.hidden=false;ns.onclick=()=>navigator.share({title:document.title,text:isAr()?'ملف أعمال م. عبدالله عاطف':'Portfolio of Eng. Abdallah Atef',url:siteUrl()}).catch(()=>{})}
 document.getElementById('copyLink').onclick=()=>copyText(siteUrl());
@@ -1231,9 +1238,9 @@ document.getElementById('composer').addEventListener('submit',e=>e.preventDefaul
 const VCF='BEGIN:VCARD\nVERSION:3.0\nN:Atef;Abdallah;;Eng.;\nFN:Abdallah Atef\nTITLE:Architectural Site Engineer & Technical Office Engineer\nTEL;TYPE=CELL:+966549608263\nEMAIL:abdallahezzat95@hotmail.com\nADR;TYPE=WORK:;;;Makkah;;;Saudi Arabia\nURL:https://qimampro.github.io/abdallah-atef/\nURL:https://www.linkedin.com/in/abdallah-atef-60054b41b\nEND:VCARD';
 const cvDlg=document.getElementById('cvDlg');
 document.getElementById('cvOpen').onclick=document.getElementById('cvOpen2').onclick=()=>cvDlg.showModal();
-if(!framed){const pb=document.getElementById('printBtn');pb.hidden=false;pb.onclick=async()=>{const ims=[...document.querySelectorAll('#printCv img')];ims.forEach(i=>{if(!i.src)i.src=i.dataset.src});toast('Preparing CV…','جارٍ تجهيز السيرة…');await Promise.all(ims.map(i=>i.decode().catch(()=>{})));document.body.classList.add('print-cv');window.print();setTimeout(()=>document.body.classList.remove('print-cv'),500)};
+if(!framed){const pb=document.getElementById('printBtn');pb.hidden=false;pb.onclick=async()=>{const ims=[...document.querySelectorAll('#printCv img')];ims.forEach(i=>{i.src=`img/${cvBase()}-${i.dataset.p}.jpg`});toast('Preparing CV…','جارٍ تجهيز السيرة…');await Promise.all(ims.map(i=>i.decode().catch(()=>{})));document.body.classList.add('print-cv');window.print();setTimeout(()=>document.body.classList.remove('print-cv'),500)};
   const vb=document.getElementById('vcfBtn');vb.hidden=false;vb.href='data:text/vcard;charset=utf-8,'+encodeURIComponent(VCF);}
-updateLinks();
+updateLinks();updateCv();
 
 /* SCROLL: nav, progress, timeline, active link, counters, reveal */
 const nav=document.getElementById('nav'),menu=document.getElementById('menu'),mb=document.getElementById('menuBtn'),prog=document.getElementById("progress"),topBtn=document.getElementById("toTop");
