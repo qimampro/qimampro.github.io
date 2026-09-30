@@ -29,10 +29,10 @@
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Abdallah Atef Ezzat","alternateName":"عبدالله عاطف","jobTitle":"Architectural Site Engineer & Technical Office Engineer","url":"https://qimampro.github.io/abdallah-atef/","image":"https://qimampro.github.io/abdallah-atef/img/portrait-800.webp","email":"mailto:abdallahezzat95@hotmail.com","telephone":"+966549608263","address":{"@type":"PostalAddress","addressLocality":"Makkah","addressCountry":"SA"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Minia University"},"sameAs":["https://www.linkedin.com/in/abdallah-atef-60054b41b"],"logo":"https://qimampro.github.io/abdallah-atef/logo/logo-4k.png"}</script>
-<script>try{var Q=new URLSearchParams(location.search).get('lang'),L=(Q==='ar'||Q==='en')?Q:localStorage.getItem('aa-lang');if(L==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}var T=localStorage.getItem('aa-theme');if(T)document.documentElement.setAttribute('data-theme',T)}catch(e){}</script>
+<script>try{var Q=new URLSearchParams(location.search).get('lang'),L=(Q==='ar'||Q==='en')?Q:localStorage.getItem('aa-lang');if(L==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';var k=document.createElement('link');k.rel='preload';k.as='font';k.type='font/woff2';k.crossOrigin='';k.href='fonts/Cairo-Regular.woff2';document.head.appendChild(k)}var T=localStorage.getItem('aa-theme');if(T)document.documentElement.setAttribute('data-theme',T)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: architectural drawing set — each section is a numbered sheet (A-01…A-11) on white paper, framed by navy panels with champagne-gold hairlines; bilingual EN / AR (RTL) */
 :root{
@@ -56,7 +56,16 @@
   --navy:#08142A; --navy-2:#15305A; --navy-deep:#060F20; --on-navy:#F4F6FA; --on-navy-soft:#B4C0D4;
   --gold:#E2C893; --gold-hi:#EFDDB7; --gold-ink:#E6CF9F; --gold-line:rgba(226,200,147,.45); --gold-soft:rgba(226,200,147,.14);
   --card:#101E34; --shadow:0 18px 40px -24px rgba(0,0,0,.7); color-scheme:dark}
-:root[lang="ar"]{--f-display:"Amiri","DM Serif Display",Georgia,serif;--f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;--f-mono:"IBM Plex Sans Arabic",Tahoma,sans-serif;--ls:0;--tt:none}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("fonts/Cairo-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+:root[lang="ar"]{--f-display:"Cairo",Tahoma,sans-serif;--f-body:"Cairo","Segoe UI",Tahoma,sans-serif;--f-mono:"Cairo",Tahoma,sans-serif;--ls:0;--tt:none}
+:root[lang="ar"] h1,:root[lang="ar"] h2,:root[lang="ar"] h3{font-weight:700!important;line-height:1.35!important}
+:root[lang="ar"] .hero h1{font-weight:800!important;line-height:1.2!important}
+:root[lang="ar"] .stat b,:root[lang="ar"] .proj .plate .fig b{font-family:var(--f-display);font-weight:700}
 :root:not([lang="ar"]) .ar{display:none!important}
 :root[lang="ar"] .en{display:none!important}
 :root[lang="ar"] em{font-style:normal}
@@ -456,7 +465,6 @@ footer{background:var(--navy-deep);color:var(--on-navy-soft);padding-block:28px}
 .tb div{padding:12px 16px;border-inline-start:1px solid var(--gold-line)}
 .tb div:first-child{border-inline-start:0}
 .tb b{display:block;color:var(--on-navy);font-weight:500;font-size:12px;margin-top:4px}
-@media (max-width:700px){.tb{grid-template-columns:1fr 1fr}.tb div:nth-child(3){border-inline-start:0}.tb div:nth-child(n+3){border-top:1px solid var(--gold-line)}}
 .totop{position:fixed;inset-inline-end:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:46px;height:46px;background:var(--navy);border:1px solid var(--gold-line);color:var(--gold-hi);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
 .totop.show{opacity:1;pointer-events:auto}
 .totop svg{width:18px;height:18px;transform:rotate(-90deg)}
@@ -520,7 +528,7 @@ dialog{border-radius:var(--r-lg);overflow:hidden}
 .qr .code{border-radius:var(--r)}
 .qr .code img{width:132px;height:132px;image-rendering:pixelated}
 .cv-pages img{border-radius:var(--r-sm)}
-.tb{border-radius:var(--r);overflow:hidden}
+
 .totop{border-radius:50%}
 .toast{border-radius:999px}
 .step .disc::after{border-radius:999px}
@@ -580,6 +588,10 @@ html:has(dialog[open]){overflow:hidden}
   .stages-legend .touch{display:inline}
 }
 @media (max-width:600px){footer{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}}
+.tb{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:10px 0;border:0!important;border-radius:0;letter-spacing:.14em}.tb div{border:0!important;padding:0!important;display:flex;align-items:baseline;gap:9px;color:rgba(180,192,212,.62)}.tb div+div::before{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg);margin-inline:22px;align-self:center;opacity:.8}.tb b{display:inline!important;color:#E3E8F0;font-size:12px;letter-spacing:.08em;margin:0!important}
+.f-copy{margin-top:22px;text-align:center;font-size:12.5px;color:rgba(180,192,212,.7)}
+.tb b{direction:ltr;unicode-bidi:isolate}
+@media (max-width:700px){.tb{display:grid!important;grid-template-columns:1fr 1fr 1fr;gap:18px 8px;text-align:center;letter-spacing:.1em}.tb div{flex-direction:column;align-items:center!important;gap:5px!important}.tb div:first-child{grid-column:1/-1}.tb b{white-space:normal}.tb div+div::before{display:none}}
 .f-logo{display:flex;justify-content:center;padding:26px 0 30px}.f-logo img{width:clamp(180px,22vw,240px);height:auto}
 :root[lang="ar"] .job .when{letter-spacing:0;font-family:var(--f-body);font-size:14px}
 @media (max-width:600px){.spec{gap:8px}.spec>span{border:1px solid var(--gold-line);border-radius:999px;padding:5px 12px;font-size:13.5px}.spec span+span::before{display:none}}
@@ -1007,12 +1019,11 @@ html:has(dialog[open]){overflow:hidden}
         <span class="open"><svg><use href="#i-eye"/></svg><span class="en">View CV</span><span class="ar">عرض السيرة</span></span>
       </button>
       <div>
-        <p class="lede en">Two-page CV in English and Arabic, set in the same identity as this site: site and technical office experience, 12 selected projects, software and credentials.</p>
-        <p class="lede ar">سيرة ذاتية من صفحتين بالعربية والإنجليزية وبنفس هوية الموقع: خبرات الموقع والمكتب الفني و12 مشروعًا مختارًا والبرامج والمؤهلات.</p>
+        <p class="lede en">Two-page A4 CV set in the same identity as this site: site and technical office experience, 12 selected projects, software and credentials.</p>
+        <p class="lede ar">سيرة ذاتية باللغة الإنجليزية من صفحتي A4 وبنفس هوية الموقع: خبرات الموقع والمكتب الفني و12 مشروعًا مختارًا والبرامج والمؤهلات.</p>
         <div class="actions">
           <button class="act" id="cvOpen2"><svg><use href="#i-eye"/></svg><span><span class="en">View in browser</span><span class="ar">عرض في المتصفح</span><small class="en">Both pages, full size</small><small class="ar">الصفحتان بالحجم الكامل</small></span></button>
-          <a class="act cv-pdf" href="Abdallah_Atef_CV.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Download PDF</span><span class="ar">تحميل PDF</span><small class="en">English CV · A4, 2 pages</small><small class="ar">السيرة بالعربية · A4 صفحتان</small></span></a>
-          <a class="act cv-pdf-alt" href="Abdallah_Atef_CV_AR.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Arabic CV</span><span class="ar">النسخة الإنجليزية</span><small class="en">السيرة الذاتية بالعربية</small><small class="ar">English CV</small></span></a>
+          <a class="act cv-pdf" href="Abdallah_Atef_CV.pdf" download><svg><use href="#i-down"/></svg><span><span class="en">Download PDF</span><span class="ar">تحميل PDF</span><small class="en">A4, 2 pages · English</small><small class="ar">A4 صفحتان · باللغة الإنجليزية</small></span></a>
           <a class="act" id="waShare" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span><span class="en">Share on WhatsApp</span><span class="ar">مشاركة عبر واتساب</span><small class="en">Send the portfolio link</small><small class="ar">إرسال رابط الموقع</small></span></a>
           <button class="act" id="copyLink"><svg><use href="#i-link"/></svg><span><span class="en">Copy portfolio link</span><span class="ar">نسخ رابط الموقع</span><small class="en">Paste into email or LinkedIn</small><small class="ar">للصقه في البريد أو لينكدإن</small></span></button>
           <button class="act" id="printBtn" hidden><svg><use href="#i-print"/></svg><span><span class="en">Print CV</span><span class="ar">طباعة السيرة</span><small class="en">A4, two pages</small><small class="ar">مقاس A4، صفحتان</small></span></button>
@@ -1073,6 +1084,7 @@ html:has(dialog[open]){overflow:hidden}
       <div>Sheets<b>A-01 – A-11</b></div>
       <div>Rev<b>2026 · 03</b></div>
     </div>
+    <p class="f-copy"><span class="en">© 2026 Eng. Abdallah Atef · Makkah, Saudi Arabia</span><span class="ar">© 2026 م. عبدالله عاطف · مكة المكرمة</span></p>
   </div>
 </footer>
 <a class="wa-float" href="https://wa.me/966549608263" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg><span class="en">WhatsApp</span><span class="ar">واتساب</span></a>
@@ -1206,10 +1218,9 @@ const C=[["Professional Site Engineer Diploma","دبلوم مهندس الموق
 document.getElementById('courses').innerHTML=C.map(c=>`<div class="course reveal"><svg><use href="#i-cert"/></svg><div><b>${t(c[0],c[1])}</b><small>${t(c[2],c[3])}</small></div></div>`).join('');
 
 /* LANGUAGE + THEME */
-const cvBase=()=>isAr()?'cv-ar-page':'cv-page';
+const cvBase=()=>'cv-page';
 function updateCv(){const b=cvBase();document.querySelectorAll('img[data-cv]').forEach(im=>{const n=im.dataset.cv,f=im.dataset.full==='1';im.srcset=`img/${b}-${n}-800.webp 800w, img/${b}-${n}-1600.webp 1600w`+(f?`, img/${b}-${n}.jpg 3840w`:'');im.src=`img/${b}-${n}-${f?1600:800}.webp`});
-  const main=isAr()?'Abdallah_Atef_CV_AR.pdf':'Abdallah_Atef_CV.pdf',alt=isAr()?'Abdallah_Atef_CV.pdf':'Abdallah_Atef_CV_AR.pdf';
-  document.querySelectorAll('.cv-pdf').forEach(a=>a.href=main);document.querySelectorAll('.cv-pdf-alt').forEach(a=>a.href=alt);}
+}
 function setLang(l){root.lang=l;root.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('aa-lang',l)}catch(e){};updateLinks();updateCv()}
 if(!root.lang)root.lang='en';
 document.getElementById('langBtn').onclick=()=>setLang(isAr()?'en':'ar');
@@ -1226,7 +1237,7 @@ const siteUrl=()=>location.href.split('#')[0];
 function updateLinks(){
   const msg=isAr()?`ملف أعمال م. عبدالله عاطف – مهندس معماري موقع ومكتب فني: ${siteUrl()}`:`Portfolio of Abdallah Atef – Architectural Site & Technical Office Engineer: ${siteUrl()}`;
   document.getElementById('waShare').href='https://wa.me/?text='+encodeURIComponent(msg);
-  const subj=isAr()?'السيرة الذاتية – م. عبدالله عاطف':'CV – Eng. Abdallah Atef';const cvUrl=new URL(isAr()?'Abdallah_Atef_CV_AR.pdf':'Abdallah_Atef_CV.pdf',siteUrl()).href;
+  const subj=isAr()?'السيرة الذاتية – م. عبدالله عاطف':'CV – Eng. Abdallah Atef';const cvUrl=new URL('Abdallah_Atef_CV.pdf',siteUrl()).href;
   document.getElementById('mailShare').href='mailto:?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(msg+'\n\n'+(isAr()?'السيرة الذاتية (PDF): ':'CV (PDF): ')+cvUrl);composeLink();}
 const ns=document.getElementById('nativeShare');if(navigator.share){ns.hidden=false;ns.onclick=()=>navigator.share({title:document.title,text:isAr()?'ملف أعمال م. عبدالله عاطف':'Portfolio of Eng. Abdallah Atef',url:siteUrl()}).catch(()=>{})}
 document.getElementById('copyLink').onclick=()=>copyText(siteUrl());
