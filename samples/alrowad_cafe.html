@@ -24,7 +24,7 @@ h1,h2,h3,.section-title,.tool-intro h2,.project-copy h3{line-height:1.45!importa
 .navrow{height:92px}
 .qlogo{width:66px!important;height:66px!important;border-radius:18px!important;padding:0!important;background:transparent!important;
  box-shadow:none!important;overflow:visible!important}
-.qlogo img{max-width:62px!important;max-height:62px!important;filter:drop-shadow(0 0 .6px rgba(255,255,255,.95)) drop-shadow(0 0 1.4px rgba(255,255,255,.55)) drop-shadow(0 0 14px color-mix(in srgb,var(--accent) 75%,transparent)) drop-shadow(0 6px 12px rgba(0,0,0,.55))}
+.qlogo img{max-width:62px!important;max-height:62px!important;filter:drop-shadow(0 0 .5px color-mix(in srgb,var(--accent) 45%,#fff)) drop-shadow(0 0 .5px color-mix(in srgb,var(--accent) 45%,#fff)) drop-shadow(0 0 1px color-mix(in srgb,var(--accent) 70%,transparent)) drop-shadow(0 0 3px color-mix(in srgb,var(--accent) 26%,transparent)) drop-shadow(0 0 8px color-mix(in srgb,var(--accent) 14%,transparent)) drop-shadow(0 0 16px color-mix(in srgb,var(--accent) 6%,transparent)) drop-shadow(0 4px 8px rgba(0,0,0,.45))}
 .brand strong{font-size:20px}
 .header-cta{border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--btn-ink);font-weight:700}
 .btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--btn-ink);box-shadow:0 12px 30px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
@@ -50,9 +50,9 @@ h1,h2,h3,.section-title,.tool-intro h2,.project-copy h3{line-height:1.45!importa
 .site-footer .footer-grid .qlogo-full{display:none!important}
 .footer-mini{border-top:1px solid var(--line)}
 .q-endlogo{display:flex;flex-direction:column;align-items:center;gap:14px;margin:38px auto 0;text-align:center}
-.q-endlogo img{width:230px;max-width:62vw;height:auto;background:transparent;padding:0;
- filter:drop-shadow(0 0 .8px rgba(255,255,255,.95)) drop-shadow(0 0 2px rgba(255,255,255,.5)) drop-shadow(0 0 30px color-mix(in srgb,var(--accent) 70%,transparent)) drop-shadow(0 14px 24px rgba(0,0,0,.6))}
-.q-endlogo{position:relative}.q-endlogo:before{content:"";position:absolute;top:-10%;left:50%;width:340px;height:340px;max-width:90vw;transform:translateX(-50%);background:radial-gradient(circle,color-mix(in srgb,var(--accent) 28%,transparent),transparent 65%);pointer-events:none;z-index:-1}
+.q-endlogo img{width:clamp(170px,22vw,240px);max-width:62vw;height:auto;background:transparent;padding:0;
+ filter:drop-shadow(0 0 .7px color-mix(in srgb,var(--accent) 45%,#fff)) drop-shadow(0 0 .7px color-mix(in srgb,var(--accent) 45%,#fff)) drop-shadow(0 0 1.5px color-mix(in srgb,var(--accent) 70%,transparent)) drop-shadow(0 0 5px color-mix(in srgb,var(--accent) 24%,transparent)) drop-shadow(0 0 14px color-mix(in srgb,var(--accent) 13%,transparent)) drop-shadow(0 0 30px color-mix(in srgb,var(--accent) 6%,transparent)) drop-shadow(0 12px 20px rgba(0,0,0,.5))}
+.q-endlogo{position:relative}.q-endlogo:before{content:"";position:absolute;top:42%;left:50%;width:clamp(260px,46vw,540px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 14%,transparent) 0%,color-mix(in srgb,var(--accent) 9%,transparent) 32%,color-mix(in srgb,var(--accent) 4%,transparent) 60%,color-mix(in srgb,var(--accent) 1%,transparent) 82%,transparent 100%);pointer-events:none;z-index:-1}
 .q-endlogo span{font-size:12px;letter-spacing:.2em;opacity:.55}
 @media(max-width:900px){.hero-grid,.project-grid{grid-template-columns:1fr!important}.hero h1{max-width:none}.hero-media,.hero-media img{min-height:300px!important}}
 @media(max-width:620px){.brand small{display:none}.brand strong{font-size:17px}.hero h1{font-size:clamp(32px,9vw,42px)!important}.navrow{height:78px}.qlogo{width:54px!important;height:54px!important;border-radius:15px!important}.qlogo img{max-width:50px!important;max-height:50px!important}.q-endlogo img{width:190px}}
