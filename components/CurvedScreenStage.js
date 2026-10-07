@@ -1,31 +1,36 @@
-/* QimamStage: the curved LED screen mockup. Site previews are mapped onto the real curve of the screen. */
+/* CurvedScreenStage: maps the site previews onto the real surface of the curved LED screen.
+   Each tile is placed with a homography computed from the screen's measured top/bottom edges,
+   so it follows the panel's slant and curve exactly. */
 (function(){if(window.QimamStage)return;
-var SLOTS=[{"c":0,"r":0,"l":13.078,"w":14.065,"t":23.705,"h":14.781,"yaw":11.46},{"c":0,"r":1,"l":13.078,"w":14.065,"t":39.891,"h":14.781,"yaw":11.46},{"c":0,"r":2,"l":13.078,"w":14.065,"t":56.077,"h":14.781,"yaw":11.46},{"c":1,"r":0,"l":29.576,"w":13.506,"t":23.643,"h":14.175,"yaw":5.23},{"c":1,"r":1,"l":29.576,"w":13.506,"t":39.166,"h":14.175,"yaw":5.23},{"c":1,"r":2,"l":29.576,"w":13.506,"t":54.688,"h":14.175,"yaw":5.23},{"c":2,"r":0,"l":45.395,"w":12.712,"t":25.447,"h":13.293,"yaw":-0.69},{"c":2,"r":1,"l":45.395,"w":12.712,"t":40.003,"h":13.293,"yaw":-0.69},{"c":2,"r":2,"l":45.395,"w":12.712,"t":54.559,"h":13.293,"yaw":-0.69},{"c":3,"r":0,"l":60.308,"w":12.22,"t":26.556,"h":12.854,"yaw":-6.33},{"c":3,"r":1,"l":60.308,"w":12.22,"t":40.631,"h":12.854,"yaw":-6.33},{"c":3,"r":2,"l":60.308,"w":12.22,"t":54.706,"h":12.854,"yaw":-6.33},{"c":4,"r":0,"l":74.69,"w":12.289,"t":26.521,"h":12.95,"yaw":-11.86},{"c":4,"r":1,"l":74.69,"w":12.289,"t":40.702,"h":12.95,"yaw":-11.86},{"c":4,"r":2,"l":74.69,"w":12.289,"t":54.883,"h":12.95,"yaw":-11.86}];
+var SRC=[320.0, 200.0], SLOTS=[{"m":[1.132172,0.264847,0,0.000507,0.0,0.837619,0,0.0,0,0,1,0,192.0,143.998542,0,1],"b":1.0},{"m":[1.132172,0.264847,0,0.000507,0.0,0.837619,0,0.0,0,0,1,0,192.0,327.561867,0,1],"b":1.0},{"m":[1.132172,0.264847,0,0.000507,0.0,0.837619,0,0.0,0,0,1,0,192.0,511.125192,0,1],"b":1.0},{"m":[1.009645,0.165147,0,0.000315,0.0,0.709833,0,0.0,0,0,1,0,492.583674,200.968995,0,1],"b":0.995},{"m":[1.009645,0.165147,0,0.000315,0.0,0.709833,0,0.0,0,0,1,0,492.583674,356.528139,0,1],"b":0.995},{"m":[1.009645,0.165147,0,0.000315,0.0,0.709833,0,0.0,0,0,1,0,492.583674,512.087283,0,1],"b":0.995},{"m":[0.876366,0.087261,0,0.000164,0.0,0.638758,0,0.0,0,0,1,0,754.641381,232.891915,0,1],"b":0.945},{"m":[0.876366,0.087261,0,0.000164,0.0,0.638758,0,0.0,0,0,1,0,754.641381,372.874995,0,1],"b":0.945},{"m":[0.876366,0.087261,0,0.000164,0.0,0.638758,0,0.0,0,0,1,0,754.641381,512.858075,0,1],"b":0.945},{"m":[0.735658,0.022171,0,3.6e-05,0.0,0.604467,0,0.0,0,0,1,0,996.126749,248.802588,0,1],"b":0.898},{"m":[0.735658,0.022171,0,3.6e-05,0.0,0.604467,0,0.0,0,0,1,0,996.126749,381.270927,0,1],"b":0.898},{"m":[0.735658,0.022171,0,3.6e-05,0.0,0.604467,0,0.0,0,0,1,0,996.126749,513.739266,0,1],"b":0.898},{"m":[0.585696,-0.035349,0,-7.7e-05,0.0,0.598052,0,0.0,0,0,1,0,1229.510961,252.811541,0,1],"b":0.851},{"m":[0.585696,-0.035349,0,-7.7e-05,0.0,0.598052,0,0.0,0,0,1,0,1229.510961,383.874063,0,1],"b":0.851},{"m":[0.585696,-0.035349,0,-7.7e-05,0.0,0.598052,0,0.0,0,0,1,0,1229.510961,514.936585,0,1],"b":0.851}];
 var sites=window.QIMAM_SITES||[{"src":"gallery/sufrah.webp","alt":"سُفرة البلد","href":"https://qimampro.github.io/samples/sufrah.html","d":80.63},{"src":"gallery/sanad.webp","alt":"مكتب سند للمحاماة","href":"https://qimampro.github.io/samples/sanad.html","d":80.63},{"src":"gallery/masar_alharamain.webp","alt":"مسار الحرمين","href":"https://qimampro.github.io/samples/masar_alharamain.html","d":81.06},{"src":"gallery/tuwaiq.webp","alt":"طويق للذكاء الاصطناعي","href":"https://qimampro.github.io/samples/tuwaiq.html","d":80.63},{"src":"gallery/rawasheen.webp","alt":"رواشين للعمارة","href":"https://qimampro.github.io/samples/rawasheen.html","d":80.82},{"src":"gallery/rawaa.webp","alt":"رواء للتطوير العقاري","href":"https://qimampro.github.io/samples/rawaa.html","d":79.81},{"src":"gallery/sadu_studio.webp","alt":"ستوديو سدو","href":"https://qimampro.github.io/samples/sadu_studio.html","d":80.6},{"src":"gallery/sudair.webp","alt":"سدير للطاقة المتجددة","href":"https://qimampro.github.io/samples/sudair.html","d":80.83},{"src":"gallery/darb_zubaidah.webp","alt":"درب زبيدة","href":"https://qimampro.github.io/samples/darb_zubaidah.html","d":80.54},{"src":"gallery/asalah.webp","alt":"أصالة للأزياء","href":"https://qimampro.github.io/samples/asalah.html","d":81.26},{"src":"gallery/alataa.webp","alt":"جمعية العطاء والنماء","href":"https://qimampro.github.io/samples/alataa.html","d":80.58},{"src":"gallery/kunooz.webp","alt":"كنوز التراث الإسلامي","href":"https://qimampro.github.io/samples/kunooz.html","d":80.58},{"src":"gallery/alrowad_cafe.webp","alt":"كافي الرواد","href":"https://qimampro.github.io/samples/alrowad_cafe.html","d":83.32},{"src":"gallery/nukhbat_alquwa.webp","alt":"نخبة القوة","href":"https://qimampro.github.io/samples/nukhbat_alquwa.html","d":79.75},{"src":"gallery/alriayah.webp","alt":"مجمع الرعاية الصحية السعودي","href":"https://qimampro.github.io/samples/alriayah.html","d":80.57}];
-var CSS='.qstage{position:relative;width:100%;max-width:1672px;margin:0 auto 40px;aspect-ratio:1672/941;background:#050607 url("gallery/stage.webp") center/cover no-repeat;border-radius:14px;overflow:hidden;isolation:isolate}'+
-'.qstage-s{position:absolute;inset:0;perspective:1500px;transform-style:preserve-3d}'+
-'.qs-t{position:absolute;overflow:hidden;border-radius:6px;background:#0a0b0e;transform-origin:50% 50%;box-shadow:0 10px 26px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.07);transition:box-shadow .4s ease,filter .4s ease;filter:brightness(var(--b,1))}'+
-'.qs-t img{display:block;width:100%;height:auto;animation:qsRun 16s infinite;will-change:transform}'+
-'.qs-t b{position:absolute;inset:auto 0 0 0;padding:14px 8px 5px;font:700 clamp(7px,.75vw,12px)/1.3 Tajawal,sans-serif;color:#F7F2E6;background:linear-gradient(transparent,rgba(0,0,0,.88));opacity:0;transition:opacity .3s}'+
-'.qs-t:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.07),transparent 45%)}'+
-'.qs-t:hover{box-shadow:0 0 0 2px #E8C877,0 0 26px rgba(232,200,119,.5),0 14px 34px rgba(0,0,0,.6);filter:brightness(1.12)}'+
+var CSS='.qstage-wrap{position:relative}'+
+'.qstage{position:relative;width:100%;max-width:1672px;margin:0 auto 40px;aspect-ratio:1672/941;background:#050607 url("gallery/stage.webp") center/cover no-repeat;border-radius:14px;overflow:hidden;isolation:isolate}'+
+'.qstage-fit{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:0 0;transform:scale(var(--k,1))}'+
+'.qs-t{position:absolute;left:0;top:0;width:320px;height:200px;transform-origin:0 0;overflow:hidden;background:#07080b;filter:brightness(var(--b,1)) saturate(.96);transition:filter .4s ease}'+
+'.qs-t img{display:block;width:100%;height:auto;animation:qsRun 17s infinite;will-change:transform}'+
+'.qs-t i{position:absolute;inset:0;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.045),transparent 42%),radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.05),transparent 60%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}'+
+'.qs-t b{position:absolute;inset:auto 0 0 0;padding:26px 14px 10px;font:700 15px/1.3 Tajawal,sans-serif;color:#F7F2E6;background:linear-gradient(transparent,rgba(0,0,0,.9));opacity:0;transition:opacity .3s}'+
+'.qs-t:hover{filter:brightness(calc(var(--b,1) * 1.18)) saturate(1)}'+
 '.qs-t:hover b{opacity:1}'+
-'.qstage-g{position:absolute;inset:0;pointer-events:none;z-index:4;background:radial-gradient(70% 55% at 46% 44%,rgba(196,162,75,.07),transparent 70%)}'+
+'.qs-t:hover i{box-shadow:inset 0 0 0 2px rgba(232,200,119,.85),inset 0 0 26px rgba(232,200,119,.22)}'+
+'.qstage-vig{position:absolute;inset:0;pointer-events:none;z-index:4;background:radial-gradient(75% 60% at 44% 46%,rgba(196,162,75,.06),transparent 72%)}'+
 '@keyframes qsRun{0%,10%{transform:translateY(0);animation-timing-function:cubic-bezier(.45,0,.35,1)}55%,63%{transform:translateY(var(--d));animation-timing-function:cubic-bezier(.5,0,.25,1)}85%,100%{transform:translateY(0)}}'+
 '.qstage-off .qs-t img{animation-play-state:paused}'+
-'.qstage-wrap{position:relative}'+
-'@media(max-width:760px){.qstage-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 6px}.qstage{min-width:720px;border-radius:10px}.qs-t b{display:none}}';
-function build(el){if(el.querySelector('.qstage-s'))return;
+'@media(max-width:760px){.qstage-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 6px}.qstage{min-width:760px;border-radius:10px}.qs-t b{display:none}}';
+function build(el){if(el.querySelector('.qstage-fit'))return;
  if(!el.parentNode.classList.contains('qstage-wrap')){var wr=document.createElement('div');wr.className='qstage-wrap';el.parentNode.insertBefore(wr,el);wr.appendChild(el);}
- var s=document.createElement('div');s.className='qstage-s';
+ var fit=document.createElement('div');fit.className='qstage-fit';
  sites.slice(0,SLOTS.length).forEach(function(site,i){var p=SLOTS[i];
   var a=document.createElement(site.href?'a':'div');a.className='qs-t';
-  if(site.href){a.href=site.href;a.target='_blank';a.rel='noopener';}
-  a.style.cssText='left:'+p.l+'%;top:'+p.t+'%;width:'+p.w+'%;height:'+p.h+'%;transform:rotateY('+p.yaw+'deg);--b:'+(1-Math.abs(p.yaw)/110).toFixed(3);
-  a.innerHTML='<img src="'+site.src+'" alt="'+(site.alt||'')+'" loading="lazy" decoding="async" style="--d:-'+(site.d||60)+'%;animation-delay:-'+((i*1.05)%16).toFixed(2)+'s"><b>'+(site.alt||'')+'</b>';
-  s.appendChild(a);});
- el.appendChild(s);
- var g=document.createElement('div');g.className='qstage-g';g.setAttribute('aria-hidden','true');el.appendChild(g);
+  if(site.href){a.href=site.href;a.target='_blank';a.rel='noopener';a.title=site.alt||'';}
+  a.style.transform='matrix3d('+p.m.join(',')+')';a.style.setProperty('--b',p.b);
+  a.innerHTML='<img src="'+site.src+'" alt="'+(site.alt||'')+'" loading="lazy" decoding="async" style="--d:-'+(site.d||55)+'%;animation-delay:-'+((i*1.13)%17).toFixed(2)+'s"><i></i><b>'+(site.alt||'')+'</b>';
+  fit.appendChild(a);});
+ el.appendChild(fit);
+ var v=document.createElement('div');v.className='qstage-vig';v.setAttribute('aria-hidden','true');el.appendChild(v);
+ function fit_(){var w=el.clientWidth;if(w)fit.style.setProperty('--k',(w/1672).toFixed(5));}
+ fit_();if('ResizeObserver' in window)new ResizeObserver(fit_).observe(el);else addEventListener('resize',fit_);
  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){el.classList.toggle('qstage-off',!e.isIntersecting);});},{rootMargin:'120px'}).observe(el);}
 function scan(){if(!document.getElementById('qstage-css')&&document.head){var st=document.createElement('style');st.id='qstage-css';st.textContent=CSS;document.head.appendChild(st);}
  var els=document.querySelectorAll('.qstage');for(var i=0;i<els.length;i++)build(els[i]);}
