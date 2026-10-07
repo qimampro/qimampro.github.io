@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="theme-color" content="#000000">
+  <script>try{history.scrollRestoration="manual";}catch(e){}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="قمم | تصميم مواقع احترافية في المملكة العربية السعودية">
   <meta property="og:type" content="website">
@@ -17,10 +19,12 @@
   <title>قمم QIMAM | تصميم مواقع احترافية</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #faf9f5; z-index: 9999; }
-    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
+    html { background: #000; }
+    body { background: #000; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    #__bundler_loading { display: none !important; position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #000; z-index: 9999; }
+    #__bundler_thumbnail svg { width: clamp(110px, 18vw, 170px); height: auto; animation: qmPulse 1.6s ease-in-out infinite; }
+    @keyframes qmPulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
   <noscript>
@@ -31,7 +35,7 @@
   </noscript>
 </head>
 <body>
-  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" sc-camel-view-box="0 0 100 100"><rect width="100" height="100" fill="#000"></rect><g fill="none" stroke="#C9A24D" stroke-width="2"><path d="M34 62V44a6 6 0 0 1 12 0v18"></path><path d="M50 62V40a6 6 0 0 1 12 0v22"></path><path d="M26 62V50a4 4 0 0 1 8 0v12"></path></g><text x="50" y="76" fill="#C9A24D" font-family="serif" font-size="11" text-anchor="middle" letter-spacing="2">QIMAM</text></svg></div>
+  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="#C9A24D" stroke-width="2"><path d="M34 62V44a6 6 0 0 1 12 0v18"></path><path d="M50 62V40a6 6 0 0 1 12 0v22"></path><path d="M26 62V50a4 4 0 0 1 8 0v12"></path></g><text x="50" y="76" fill="#C9A24D" font-family="serif" font-size="11" text-anchor="middle" letter-spacing="2">QIMAM</text></svg></div>
   <div id="__bundler_loading">Unpacking...</div>
 
   <script>
@@ -53,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Error sink persists across replaceWith since it's on window, not the DOM.
   window.addEventListener('error', function(e) {
     // Failed resource loads (CSP-blocked links, scripts, images) fire plain
-    // events at the element — warn only; real JS errors carry message/error.
+    // events at the element - warn only; real JS errors carry message/error.
     if (!e.message && !e.error && e.target && e.target !== window) {
       console.warn('[bundle] resource failed to load:',
         e.target.tagName, String(e.target.src || e.target.href || ''));
@@ -73,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const templateEl = document.querySelector('script[type="__bundler/template"]');
     if (!manifestEl || !templateEl) {
       setStatus('Error: missing bundle data');
-      console.error('[bundler] Missing script tags — manifestEl:', !!manifestEl, 'templateEl:', !!templateEl);
+      console.error('[bundler] Missing script tags - manifestEl:', !!manifestEl, 'templateEl:', !!templateEl);
       return;
     }
 
@@ -83,8 +87,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Nested page bundles (iframe targets). Each ships ONCE, in the ROOT
     // document's manifest; frame srcs carry an about:blank#<uuid> marker
     // instead of a substitutable uuid. Every document mints the blobs for
-    // its OWN frames — from local text at the root, or text obtained from
-    // its DIRECT parent over the relay protocol below — so each frame
+    // its OWN frames - from local text at the root, or text obtained from
+    // its DIRECT parent over the relay protocol below - so each frame
     // navigation stays same-origin with its initiator and a deduped page
     // loads at any depth on any host, including a file:// download's
     // opaque origins (where a blob minted by one document cannot be
@@ -104,21 +108,21 @@ document.addEventListener('DOMContentLoaded', async function() {
     // for the document's own child frames, and the ROOT never sends
     // upward at all. That last rule is load-bearing: the artifact host's
     // frame-ancestors allows claude.ai (and friends) to frame an
-    // artifact, so window.top can be a FOREIGN document — a top-addressed
+    // artifact, so window.top can be a FOREIGN document - a top-addressed
     // protocol would hand page uuids to that ancestor and accept forged
     // "page text" from it, minting attacker HTML as an artifact-origin
     // blob document. The chain never touches the ancestor: requests stop
     // at the root, replies are origin-addressed per hop (never '*' when
     // an origin exists), and both directions are origin-gated (on https
     // a foreign sender's origin can never equal this document's; in
-    // opaque contexts — file:// — everything serializes as 'null', where
+    // opaque contexts - file:// - everything serializes as 'null', where
     // an embedded EXTERNAL frame still fails the gate by carrying its
     // own real origin, and a sandboxed child of such a frame is excluded
     // by the own-child-frames check plus uuid unguessability). Shape is
     // deny-by-default: one request form, one reply form, no error
     // replies.
     // window.origin is the SERIALIZED SECURITY origin ('null' in opaque
-    // contexts such as a sandboxed preview iframe) — location.origin is
+    // contexts such as a sandboxed preview iframe) - location.origin is
     // computed from the URL and stays 'https://…' even when the document
     // is sandboxed, which would misgate every opaque chain.
     const OWN_TARGET = /^https?:[/][/]/.test(window.origin || '')
@@ -128,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       if (e.origin === window.origin) return true; // https chains; opaque==opaque
       // file:// trees: Chrome serializes the file document's origin as
       // 'file://' while the blob: documents it mints serialize as 'null',
-      // so the two legitimate shapes can never string-match — accept the
+      // so the two legitimate shapes can never string-match - accept the
       // pair in both directions. https origins never serialize as either,
       // and sender identity (own child frame / direct parent) is checked
       // separately.
@@ -141,7 +145,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     // Non-empty only in the root document (nested bundles ship an empty
     // island), so it doubles as the root marker: the root answers from
-    // local text and treats a miss as authoritative — never relaying to
+    // local text and treats a miss as authoritative - never relaying to
     // its (possibly foreign) parent.
     const isPageRoot = pageOrder.length > 0;
     const blobUrls = {};
@@ -180,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       // Origin gate first; the structural checks below (own-child-frames
       // for requests, direct-parent + solicited-uuid for replies, the
       // root's never-relay rule) are what hold in fully opaque chains
-      // where origin strings can't discriminate — a sandboxed root's
+      // where origin strings can't discriminate - a sandboxed root's
       // FOREIGN wrapper still fails all three even though both serialize
       // as real-vs-'null' rather than matching.
       if (!trustedOrigin(e)) return;
@@ -212,9 +216,9 @@ document.addEventListener('DOMContentLoaded', async function() {
       ) {
         // The shape test is load-bearing beyond tidiness: the solicited
         // check below uses the in operator, which matches prototype keys
-        // ('__proto__', 'constructor') — an unshaped key would reach
+        // ('__proto__', 'constructor') - an unshaped key would reach
         // deliverPage and throw, painting the error banner.
-        // Text is accepted only from the direct parent — the document
+        // Text is accepted only from the direct parent - the document
         // that minted this one.
         if (e.source !== window.parent || window.parent === window) return;
         if (!(d.__bundler_page in pendingFrames) && !(d.__bundler_page in pendingRelays)) return;
@@ -284,19 +288,19 @@ document.addEventListener('DOMContentLoaded', async function() {
       if (blobUrls[entry.uuid]) resourceMap[entry.id] = blobUrls[entry.uuid];
     }
 
-    // Artifact-host CSP (connect-src 'self') refuses fetch() of blob: URLs —
+    // Artifact-host CSP (connect-src 'self') refuses fetch() of blob: URLs -
     // consumers read these Blobs directly. Survives the swap like the error sink.
     window.__resourceBlobs = resourceBlobs;
 
     setStatus('Rendering...');
-    // Page uuids have no blob here — they ride inside about:blank#<uuid>
+    // Page uuids have no blob here - they ride inside about:blank#<uuid>
     // frame markers the pass below resolves after the swap.
     for (const uuid of uuids) {
       if (pageSet.has(uuid)) continue;
       template = template.split(uuid).join(blobUrls[uuid]);
     }
 
-    // Strip integrity + crossorigin — blob URLs from a file:// document inherit
+    // Strip integrity + crossorigin - blob URLs from a file:// document inherit
     // a null origin, so crossorigin forces a CORS fetch that SRI then rejects.
     // The manifest bytes are ours; SRI protects against CDN compromise, not this.
     template = template.replace(/\s+integrity="[^"]*"/gi, '').replace(/\s+crossorigin="[^"]*"/gi, '');
@@ -316,14 +320,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     // Parse the template and swap the root element. Scripts inserted via
-    // DOMParser/replaceWith are inert per spec — re-create each with
+    // DOMParser/replaceWith are inert per spec - re-create each with
     // createElement so they execute, awaiting onload for src scripts to
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
+    if (!location.hash || location.hash.indexOf('#/') === 0) window.scrollTo(0, 0);
 
     // Resolve page-frame markers: mint this document's own blob for each
-    // framed page — from local text when this is the root, otherwise by
+    // framed page - from local text when this is the root, otherwise by
     // asking the direct parent over the relay protocol above. An
     // unanswered request leaves the frame on about:blank, the same
     // degraded state as a refused embed.
