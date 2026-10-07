@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="15 موكاب واقعي لمواقع سعودية على شاشة Apple iMac" />
+  <title>المعرض — 15 Apple iMac Mockups</title>
+  <style>
+    :root { --bg:#050505; --surface:#0d0d0d; --line:rgba(215,163,61,.25); --gold:#d7a33d; --gold-soft:#f0ca77; --text:#f7f1e6; --muted:#999187; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; color:var(--text); background:radial-gradient(circle at 12% 0%,rgba(215,163,61,.09),transparent 32rem),radial-gradient(circle at 92% 10%,rgba(37,130,124,.08),transparent 34rem),var(--bg); font-family:Tahoma,Arial,sans-serif; }
+    .wrap { width:min(1500px,calc(100% - 48px)); margin:auto; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:28px 0 24px; border-bottom:1px solid rgba(255,255,255,.08); }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .mark { width:42px; height:42px; display:grid; place-items:center; color:#14110a; background:linear-gradient(135deg,var(--gold-soft),var(--gold)); border-radius:12px; font-weight:900; }
+    h1 { margin:0; font-size:clamp(1.5rem,3vw,2.4rem); letter-spacing:-.06em; }
+    .brand p { margin:5px 0 0; color:var(--muted); font-size:.86rem; }
+    .badge { padding:11px 16px; color:var(--gold-soft); border:1px solid rgba(215,163,61,.66); border-radius:14px; font-size:.83rem; white-space:nowrap; }
+    .hero { padding:42px 0 29px; max-width:880px; }
+    .eyebrow { margin:0 0 9px; color:var(--gold-soft); font-size:.8rem; }
+    .hero h2 { margin:0; font-size:clamp(2rem,4.5vw,4.5rem); line-height:1.03; letter-spacing:-.09em; }
+    .hero p { max-width:720px; margin:18px 0 0; color:#b7afa3; line-height:1.9; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin:27px 0 17px; }
+    .section-head h2 { margin:0; font-size:1.25rem; }
+    .section-head p { margin:0; color:var(--muted); font-size:.8rem; }
+    .dashboard { position:relative; overflow:hidden; padding:clamp(16px,2.5vw,34px); background:linear-gradient(145deg,#111,#080808 68%,#17120a); border:1px solid rgba(215,163,61,.35); border-radius:29px; box-shadow:0 24px 70px rgba(0,0,0,.45); }
+    .dashboard::before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 0%,rgba(215,163,61,.16),transparent 44%); }
+    .dashboard-screen { position:relative; padding:12px; overflow:hidden; background:#050505; border:1px solid rgba(255,255,255,.2); border-radius:18px; box-shadow:inset 0 0 0 6px #101010,0 22px 55px rgba(0,0,0,.5); }
+    .dashboard-screen > img { display:none; width:100%; height:auto; border-radius:8px; }
+    .dashboard-screen.has-image > img { display:block; }
+    .dashboard-screen.has-image .dashboard-live { display:none; }
+    .dashboard-live-head { display:flex; align-items:center; justify-content:space-between; padding:10px 14px 14px; color:var(--muted); font-size:.75rem; }
+    .dashboard-live-head strong { color:var(--gold-soft); font-size:.95rem; }
+    .dashboard-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:9px; }
+    .dashboard-tile { position:relative; overflow:hidden; aspect-ratio:16/10; background:linear-gradient(135deg,#191919,#2a210f); border:1px solid rgba(255,255,255,.13); border-radius:8px; }
+    .dashboard-tile img { width:100%; height:100%; display:block; object-fit:cover; }
+    .dashboard-tile span { position:absolute; right:7px; bottom:5px; z-index:2; color:#fff; font-size:.57rem; text-shadow:0 1px 6px #000; }
+    .toolbar { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:35px 0 20px; }
+    .toolbar h2 { margin:0; font-size:1.22rem; }
+    .search { width:min(330px,100%); padding:12px 15px; color:var(--text); background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.13); border-radius:12px; outline:none; }
+    .search::placeholder { color:#777168; }
+    .search:focus { border-color:var(--gold); box-shadow:0 0 0 4px rgba(215,163,61,.1); }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding-bottom:44px; }
+    .card { overflow:hidden; background:var(--surface); border:1px solid rgba(255,255,255,.12); border-radius:22px; box-shadow:0 24px 70px rgba(0,0,0,.42); transition:transform .35s ease,border-color .35s ease; }
+    .card:hover { transform:translateY(-6px); border-color:rgba(215,163,61,.72); }
+    .image-wrap { position:relative; min-height:265px; aspect-ratio:4/3; overflow:hidden; background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 1px,transparent 1px 13px),#111; }
+    .image-wrap img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+    .card:hover .image-wrap img { transform:scale(1.018); }
+    .placeholder { position:absolute; inset:0; z-index:0; display:grid; place-items:center; padding:25px; color:rgba(255,255,255,.47); text-align:center; font-size:.78rem; line-height:1.8; background:linear-gradient(135deg,#121212,#2b210f); }
+    .image-wrap img { position:relative; z-index:1; }
+    .number { position:absolute; top:13px; right:13px; z-index:3; padding:7px 10px; color:#16110a; background:var(--gold); border-radius:7px; font-size:.68rem; font-weight:700; }
+    .caption { position:absolute; left:12px; right:12px; bottom:12px; z-index:3; padding:7px 9px; color:#f8ecd4; background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.17); border-radius:7px; font-size:.66rem; backdrop-filter:blur(10px); }
+    .info { padding:20px 23px 22px; }
+    .meta { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:.78rem; }
+    .icon { display:inline-grid; place-items:center; width:25px; height:25px; color:var(--gold-soft); border:1px solid rgba(215,163,61,.4); border-radius:8px; }
+    .info h3 { margin:10px 0 7px; font-size:1.22rem; letter-spacing:-.04em; }
+    .info p { margin:0; color:#aaa196; font-size:.78rem; line-height:1.75; }
+    .footer { padding:8px 0 35px; color:#777168; font-size:.74rem; line-height:1.9; text-align:center; }
+    code { color:var(--gold-soft); }
+    @media(max-width:1050px) { .grid{grid-template-columns:repeat(2,minmax(0,1fr));}.dashboard-grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
+    @media(max-width:680px) { .wrap{width:min(100% - 28px,560px)} .topbar,.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%}.grid{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.image-wrap{min-height:240px} }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after{transition-duration:.01ms!important;scroll-behavior:auto!important} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand"><div class="mark">↗</div><div><h1>المعرض</h1><p>15 Apple iMac Saudi Mockups</p></div></div>
+      <div class="badge">15 صورة + Dashboard</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">QIMAM — REAL SAUDI DIGITAL SHOWCASE</p>
+      <h2>مواقعك على شاشة<br />تستحق أن تُرى.</h2>
+      <p>موكابات واقعية وقريبة لجهاز Apple iMac على مكتب مودرن فاخر، مع خلفيات سعودية أصيلة ومعالم مرتبطة بكل مجال، مع إبقاء الموقع هو العنصر الأوضح في كل صورة.</p>
+    </section>
+
+    <section aria-labelledby="dashboard-title">
+      <div class="section-head"><div><h2 id="dashboard-title">Dashboard المعرض</h2><p>صورة واحدة تجمع المواقع الخمسة عشر</p></div><p>الملف: <code>assets/mockups/dashboard-15-sites.png</code></p></div>
+      <div class="dashboard"><div class="dashboard-screen" id="dashboardScreen"><img src="assets/mockups/dashboard-15-sites.png" alt="Dashboard يجمع 15 موقعًا" onload="this.closest('.dashboard-screen').classList.add('has-image')" /><div class="dashboard-live"><div class="dashboard-live-head"><strong>معرض المواقع</strong><span>15 PROJECTS / SAUDI PORTFOLIO</span></div><div class="dashboard-grid" id="dashboardGrid"></div></div></div></div>
+    </section>
+
+    <section aria-labelledby="gallery-title">
+      <div class="toolbar"><h2 id="gallery-title">الموكابات الفردية</h2><input class="search" id="search" type="search" placeholder="ابحث عن المجال أو المعلم..." aria-label="ابحث عن المجال أو المعلم" /></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <p class="footer">كل صورة يجب أن تكون فوتوغرافية واقعية، والمعلم السعودي فيها حقيقي وصحيح ومرتبط بالمجال. ضع الصور داخل <code>assets/mockups/</code>، ولا تستخدم صورًا مولدة أو معالم مشوهة.</p>
+  </main>
+
+  <script>
+    const sites = [
+      ['01','مطعم حجازي','سفرة البلد','جدة التاريخية — البلد','01-safrat-albalad.png','⌂','هوية ضيافة مستوحاة من جدة التاريخية.'],
+      ['02','محاماة واستشارات','مكتب سند للمحاماة','قصر المصمك — الرياض','02-sanad-law.png','⚖','موقع قانوني رسمي يبرز الثقة والوضوح.'],
+      ['03','حج وعمرة','مسار الحرمين','برج الساعة — مكة','03-masar-alharamain.png','✦','منصة منظمة لرحلة أكثر وضوحًا وطمأنينة.'],
+      ['04','ذكاء اصطناعي','طويق للذكاء الاصطناعي','مركز الملك عبدالله المالي KAFD','04-tuwaiq-ai.png','⌁','حلول تقنية تحول البيانات إلى أثر واضح.'],
+      ['05','هندسة معمارية','رواشين للعمارة','حي الطريف — الدرعية','05-rawashin.png','⌂','عمارة سعودية بروح معاصرة.'],
+      ['06','تطوير عقاري','رواء للتطوير العقاري','مدينة الملك عبدالله الاقتصادية','06-rawa-real-estate.png','▥','مشاريع عقارية تُعرض بلغة فاخرة.'],
+      ['07','تصميم وهوية','ستوديو سدو','إثراء — الظهران','07-sadu-studio.png','◇','هوية بصرية تستلهم الثقافة السعودية.'],
+      ['08','طاقة متجددة','سدير للطاقة المتجددة','محطة سكاكا للطاقة الشمسية','08-sudair-energy.png','☼','حلول طاقة نظيفة ومستقبل مستدام.'],
+      ['09','سفر وسياحة','درب زبيدة','طريق زبيدة التاريخي','09-darb-zubaydah.png','⌖','رحلات تجمع التاريخ والطبيعة والاكتشاف.'],
+      ['10','أزياء رجالية','أصالة للأزياء','قرية رجال ألمع — عسير','10-asala-fashion.png','⌁','أزياء عصرية بروح سعودية أصيلة.'],
+      ['11','جمعية خيرية','جمعية العطاء والنماء','المتحف الوطني السعودي — الرياض','11-alataa-charity.png','♡','مبادرات مجتمعية وأثر إنساني واضح.'],
+      ['12','كتب وتحف نادرة','كنوز التراث الإسلامي','مكتبة الملك فهد الوطنية — الرياض','12-kunooz-heritage.png','▤','منصة فاخرة للكتب والتحف النادرة.'],
+      ['13','مقهى ومطعم','كافي الرواد','صخرة الفيل — العلا','13-alrowad-cafe.png','☕','تجربة ضيافة مستلهمة من طبيعة العلا.'],
+      ['14','نادي رياضي رجال','نخبة القوة','ملعب الجوهرة — مدينة الملك عبدالله الرياضية، جدة','14-nokhbat-alqowa.png','ϟ','تجربة رياضية قوية وواضحة.'],
+      ['15','مجمع صحي','مجمع الرعاية الصحية السعودي','مدينة الملك فهد الطبية — الرياض','15-saudi-healthcare.png','♡','خدمات صحية تضع الإنسان في المركز.']
+    ];
+
+    const path = file => `assets/mockups/${file}`;
+    const grid = document.querySelector('#grid');
+    const dashboardGrid = document.querySelector('#dashboardGrid');
+    const search = document.querySelector('#search');
+
+    function card(site) {
+      const [number, category, title, landmark, image, icon, description] = site;
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.dataset.search = `${category} ${title} ${landmark}`.toLowerCase();
+      el.innerHTML = `<div class="image-wrap"><div class="placeholder">أضف صورة الموكاب هنا<br /><strong>${landmark}</strong></div><img src="${path(image)}" alt="موكاب ${title} على شاشة Apple iMac مع ${landmark}" onerror="this.style.display='none'" /><span class="number">${number}</span><span class="caption">المعلم: ${landmark}</span></div><div class="info"><div class="meta"><span class="icon">${icon}</span><span>${category}</span></div><h3>${title}</h3><p>${description}</p></div>`;
+      return el;
+    }
+
+    function render(query = '') {
+      const q = query.trim().toLowerCase();
+      grid.innerHTML = '';
+      sites.filter(site => !q || `${site[1]} ${site[2]} ${site[3]}`.toLowerCase().includes(q)).forEach(site => grid.appendChild(card(site)));
+      if (!grid.children.length) grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#aaa;padding:60px 0">لا توجد نتائج مطابقة.</p>';
+    }
+
+    sites.forEach(([number, , title, , image]) => {
+      const tile = document.createElement('div');
+      tile.className = 'dashboard-tile';
+      tile.innerHTML = `<img src="${path(image)}" alt="${title}" onerror="this.style.display='none'" /><span>${number}</span>`;
+      dashboardGrid.appendChild(tile);
+    });
+
+    render();
+    search.addEventListener('input', event => render(event.target.value));
+  </script>
+</body>
+</html>
