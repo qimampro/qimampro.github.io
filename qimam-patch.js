@@ -6,21 +6,21 @@
 
   /* screen rect measured from each mockup: [L, T, W, H, radius] in mockup pixels */
   var RECT = {
-    sufrah:           [171, 93, 1098, 603, 6],
-    sanad:            [174, 92, 1065, 603, 6],
-    masar_alharamain: [173, 93, 1097, 602, 6],
-    tuwaiq:           [172, 92, 1065, 600, 6],
-    rawasheen:        [171, 92, 1098, 603, 6],
-    rawaa:            [172, 91, 1097, 603, 6],
-    sadu_studio:      [180, 93, 1053, 588, 6],
-    sudair:           [175, 92, 1095, 602, 6],
-    darb_zubaidah:    [172, 93, 1097, 602, 6],
-    asalah:           [172, 93, 1098, 601, 6],
-    alataa:           [172, 92, 1097, 603, 6],
-    kunooz:           [176, 92, 1081, 598, 6],
-    alrowad_cafe:     [173, 94, 1060, 597, 6],
-    nukhbat_alquwa:   [171, 93, 1097, 601, 6],
-    alriayah:         [171, 93, 1098, 603, 6]
+    sufrah:           [204, 128, 1032, 535, 3],
+    sanad:            [208, 127, 998, 536, 3],
+    masar_alharamain: [206, 127, 1033, 536, 3],
+    tuwaiq:           [205, 128, 1000, 533, 3],
+    rawasheen:        [204, 127, 1032, 537, 3],
+    rawaa:            [205, 126, 1031, 537, 3],
+    sadu_studio:      [213, 129, 989, 522, 3],
+    sudair:           [207, 128, 1030, 535, 3],
+    darb_zubaidah:    [205, 128, 1032, 536, 3],
+    asalah:           [206, 128, 1031, 535, 3],
+    alataa:           [205, 127, 1031, 536, 3],
+    kunooz:           [207, 126, 1020, 534, 3],
+    alrowad_cafe:     [206, 128, 993, 532, 3],
+    nukhbat_alquwa:   [204, 127, 1033, 536, 3],
+    alriayah:         [204, 128, 1032, 535, 3]
   };
 
   var SITES = [
