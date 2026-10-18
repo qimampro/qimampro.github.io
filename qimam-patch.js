@@ -27,7 +27,26 @@
     if (!document.getElementById('qimam-patch-css')) document.head.appendChild(s);
   }
 
-  keepCss();
-  var t = setInterval(keepCss, 400);
+  var icons = [
+    ['icon', 'favicon.ico', null, 'any'],
+    ['icon', 'favicon-32.png', 'image/png', '32x32'],
+    ['icon', 'favicon-192.png', 'image/png', '192x192'],
+    ['apple-touch-icon', 'apple-touch-icon.png', null, null]
+  ];
+  function keepIcons() {
+    if (document.querySelector('link[data-qimam-icon]')) return;
+    icons.forEach(function (i) {
+      var l = document.createElement('link');
+      l.rel = i[0]; l.href = i[1];
+      if (i[2]) l.type = i[2];
+      if (i[3]) l.setAttribute('sizes', i[3]);
+      l.setAttribute('data-qimam-icon', '');
+      document.head.appendChild(l);
+    });
+  }
+
+  function keepAll() { keepCss(); keepIcons(); }
+  keepAll();
+  var t = setInterval(keepAll, 400);
   setTimeout(function () { clearInterval(t); }, 60000);
 })();
